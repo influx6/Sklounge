@@ -3,7 +3,7 @@
   <div id='latest_event' >
     <div id='latest_list' class='sidcurve shadow'>
       <div id='latest_top'>
-        <h3>Latest Events</h3>
+        <h3>Latest Events on <%= Event.month_list[Event.current_month] %>, <%= Event.current_year %> </h3>
       </div>
       <div id='latest_bottom'>
        <% @events.each do |e| %>
@@ -71,9 +71,25 @@
   </div>
 
 </div>
+
 <div id="form_back"  >
-<%= link_to 'Back Home', root_path %>
+<ul>
+<li><%= link_to 'Back Home', root_path%>
+<ul>
+<li><%= link_to 'Make Reservation', new_reservation_path%></li>
+<li>  <%= link_to 'Gallery',galleries_path %></li>
+<li>
+<%= link_to 'Events',events_path %>
+</li>
+<li>
+<%= link_to 'About',lounges_about_path  %>
+</li>
+</ul>
+</li>
+</ul>
 </div>
+
+
 
 <div class='clear'></div>
 <%= link_to 'New Event', new_event_path %>

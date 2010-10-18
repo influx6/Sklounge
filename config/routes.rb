@@ -1,10 +1,11 @@
 Sklounge::Application.routes.draw do
-  
+
   resources :events
 
   get 'lounges/about'
   get 'reservations/index'
-  
+
+
   root :to => 'lounges#index'
 
   resources :bulletins
@@ -13,8 +14,8 @@ Sklounge::Application.routes.draw do
   resources :reservations
   resource :user_sessions
 
- 
-  
+
+
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout'=>'user_sessions#destroy',:as => :logout
 

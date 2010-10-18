@@ -8,9 +8,19 @@
 </div>
 
 <div id="form_back"  >
-<%= link_to 'Back Home', root_path %>
+<ul>
+<li><%= link_to 'Back Home', root_path%>
+<ul>
+<li><%= link_to 'Make Reservation', new_reservation_path%></li>
+<li>  <%= link_to 'Gallery',galleries_path %></li>
+<li>
+<%= link_to 'Events',events_path %>
+</li>
+<li>
+<%= link_to 'About',lounges_about_path  %>
+</li>
+</ul>
+</li>
+</ul>
 </div>
-
-
-
 

@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/stygeo/runner.git
-  revision: 7db5ad8353040721bdec8eb839b1ea48c5abcd8d
-  specs:
-    runner (0.1.4)
-
-GIT
   remote: http://github.com/binarylogic/authlogic.git
   revision: 66ed79515919fe13016911b10ebe734cf8718dc7
   specs:
@@ -115,7 +109,6 @@ DEPENDENCIES
   rails (= 3.0.0)
   rspec (= 2.0.0.rc)
   rspec-rails (= 2.0.0.rc)
-  runner (= 0.1.4)!
   spork
   sqlite3-ruby
   unicorn

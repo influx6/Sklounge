@@ -7,10 +7,9 @@
       </div>
       <div id='latest_bottom'>
       <% @events.each do |e| %>
-       <div id='event_detail' class='curved'>
-
         <% if e.month == Event.current_month %>
-              <p><%= e.event_name %> |
+       <div id='event_detail' class='curved'>
+           <p><%= e.event_name %> |
             <% if e.event_end_time == e.event_start_time %>
              <%= e.event_end_time %>
             <% else %>
@@ -21,7 +20,7 @@
             <a href=""><img src="/images/x.png" /></a></label>
             <% end %>
             </p>
-            <p>
+   <p>
             Event Begins on:
             <% if e.event_end_date == e.event_start_date %>
              <%= format_date e.event_end_date %>
@@ -29,11 +28,10 @@
             <%= format_date e.event_start_date %>  - <%= format_date e.event_end_date %>
             <% end %>
             </p>
-        <% end %>
        </div>
-        <% end %>
-      </div>
-    </div>
+       <% end %>
+       <% end %>
+     </div>
   </div>
 
 

@@ -16831,3 +16831,883 @@ Started GET "/events" for 127.0.0.1 at 2010-10-18 08:14:31 +0100
   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
 Rendered events/index.html.erb within layouts/application (101.7ms)
 Completed 200 OK in 117ms (Views: 105.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:31:39 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (5.6ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (112.1ms)
+Completed 200 OK in 135ms (Views: 116.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:47:18 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+ERROR: compiling _app_views_events_index_html_erb__2686500686546724791_41067900__2444806619931460628 RAISED /home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:81: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:83: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_events_index_html_erb__2686500686546724791_41067900__2444806619931460628(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "events/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id=\'event_index\'>
+
+  <div id=\'latest_event\' >
+    <div id=\'latest_list\' class=\'sidcurve shadow\'>
+      <div id=\'latest_top\'>
+        <h3>Latest Events on  ');@output_buffer.append= ( Event.month_list[Event.current_month] );@output_buffer.safe_concat(', ');@output_buffer.append= ( Event.current_year );@output_buffer.safe_concat(' </h3>
+      </div>
+      <div id=\'latest_bottom\'>
+');@output_buffer.append_if_string=        @events.each do |e| 
+@output_buffer.safe_concat('       <div id=\'event_detail\' class=\'curved\'>
+');         if e.month == Event.current_month 
+@output_buffer.safe_concat('      <p>');@output_buffer.append= ( e.event_name );@output_buffer.safe_concat(' |
+');       if e.event_end_time == e.event_start_time 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');       else 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( e.event_start_time );@output_buffer.safe_concat(' - ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');       end 
+       if current_user 
+@output_buffer.safe_concat('    <label><a href=""><img src="/images/s.png" /></a>
+    <a href=""><img src="/images/x.png" /></a></label>
+');        end 
+@output_buffer.safe_concat('      </p>
+      <p>Event Begins on:
+');       if e.event_end_date == e.event_start_date 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');         else 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( format_date e.event_start_date );@output_buffer.safe_concat('  - ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');         end 
+@output_buffer.safe_concat('       </p>
+
+       </div>
+');         end 
+@output_buffer.safe_concat('      </div>
+    </div>
+  </div>
+
+
+  <div id=\'event_list\'>
+  <h2>Sklounge Events: Year ');@output_buffer.append= ( Event.current_year );@output_buffer.safe_concat('</h2><br/>
+');@output_buffer.append_if_string=       Event.month_list.each do |k,v| 
+@output_buffer.safe_concat('         <div id="event_holder" class=\'sidcurve\'>
+          <h3>');@output_buffer.append= ( v );@output_buffer.safe_concat('</h3>
+');@output_buffer.append_if_string=             @events.each do |e| 
+             if e.month == k 
+@output_buffer.safe_concat('            <div id=\'event_detail\' class=\'curved\'>
+            <p>');@output_buffer.append= ( e.event_name );@output_buffer.safe_concat(' |
+');             if e.event_end_time == e.event_start_time 
+@output_buffer.safe_concat('             ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');             else 
+@output_buffer.safe_concat('            ');@output_buffer.append= ( e.event_start_time );@output_buffer.safe_concat(' - ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');             end 
+             if current_user 
+@output_buffer.safe_concat('            <label><a href=""><img src="/images/s.png" /></a>
+            <a href=""><img src="/images/x.png" /></a></label>
+');             end 
+@output_buffer.safe_concat('            </p>
+            <p>
+            Event Begins on:
+');             if e.event_end_date == e.event_start_date 
+@output_buffer.safe_concat('             ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');             else 
+@output_buffer.safe_concat('            ');@output_buffer.append= ( format_date e.event_start_date );@output_buffer.safe_concat('  - ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');             end 
+@output_buffer.safe_concat('            </p>
+            </div>
+');             end 
+            end 
+@output_buffer.safe_concat('         </div>
+');     end 
+@output_buffer.safe_concat('  </div>
+
+</div>
+<div id="form_back"  >
+');@output_buffer.append= ( link_to 'Back Home', root_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</div>
+
+<div class=\'clear\'></div>
+');@output_buffer.append= ( link_to 'New Event', new_event_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `module_eval'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `compile'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `block in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/monster/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/monster/Documents/Rails/sklounge/app/controllers/events_controller.rb:7:in `index'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:440:in `_run__626586919826195893__process_action__2757972553675293829__callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `block in action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:48:in `_call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:36:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/showexceptions.rb:24:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/commonlogger.rb:18:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:644:in `process_client'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:717:in `block in worker_loop'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:715:in `each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:715:in `worker_loop'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:606:in `block (2 levels) in spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:603:in `fork'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:603:in `block in spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:599:in `each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:599:in `spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:613:in `maintain_worker_count'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:270:in `start'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:29:in `run'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/bin/unicorn:124:in `<top (required)>'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `load'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `<main>'
+Rendered events/index.html.erb within layouts/application (2.0ms)
+Completed   in 18ms
+
+ActionView::Template::Error (/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:81: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:83: syntax error, unexpected $end, expecting keyword_end):
+    78: <%= link_to 'New Event', new_event_path %>
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:47:25 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+ERROR: compiling _app_views_events_index_html_erb__2686500686546724791_38055760__2444806619931460628 RAISED /home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:81: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:83: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_events_index_html_erb__2686500686546724791_38055760__2444806619931460628(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "events/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id=\'event_index\'>
+
+  <div id=\'latest_event\' >
+    <div id=\'latest_list\' class=\'sidcurve shadow\'>
+      <div id=\'latest_top\'>
+        <h3>Latest Events on  ');@output_buffer.append= ( Event.month_list[Event.current_month] );@output_buffer.safe_concat(', ');@output_buffer.append= ( Event.current_year );@output_buffer.safe_concat(' </h3>
+      </div>
+      <div id=\'latest_bottom\'>
+');@output_buffer.append_if_string=        @events.each do |e| 
+@output_buffer.safe_concat('       <div id=\'event_detail\' class=\'curved\'>
+');         if e.month == Event.current_month 
+@output_buffer.safe_concat('      <p>');@output_buffer.append= ( e.event_name );@output_buffer.safe_concat(' |
+');       if e.event_end_time == e.event_start_time 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');       else 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( e.event_start_time );@output_buffer.safe_concat(' - ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');       end 
+       if current_user 
+@output_buffer.safe_concat('    <label><a href=""><img src="/images/s.png" /></a>
+    <a href=""><img src="/images/x.png" /></a></label>
+');        end 
+@output_buffer.safe_concat('      </p>
+      <p>Event Begins on:
+');       if e.event_end_date == e.event_start_date 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');         else 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( format_date e.event_start_date );@output_buffer.safe_concat('  - ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');         end 
+@output_buffer.safe_concat('       </p>
+');      end 
+@output_buffer.safe_concat('       </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id=\'event_list\'>
+  <h2>Sklounge Events: Year ');@output_buffer.append= ( Event.current_year );@output_buffer.safe_concat('</h2><br/>
+');@output_buffer.append_if_string=       Event.month_list.each do |k,v| 
+@output_buffer.safe_concat('         <div id="event_holder" class=\'sidcurve\'>
+          <h3>');@output_buffer.append= ( v );@output_buffer.safe_concat('</h3>
+');@output_buffer.append_if_string=             @events.each do |e| 
+             if e.month == k 
+@output_buffer.safe_concat('            <div id=\'event_detail\' class=\'curved\'>
+            <p>');@output_buffer.append= ( e.event_name );@output_buffer.safe_concat(' |
+');             if e.event_end_time == e.event_start_time 
+@output_buffer.safe_concat('             ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');             else 
+@output_buffer.safe_concat('            ');@output_buffer.append= ( e.event_start_time );@output_buffer.safe_concat(' - ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');             end 
+             if current_user 
+@output_buffer.safe_concat('            <label><a href=""><img src="/images/s.png" /></a>
+            <a href=""><img src="/images/x.png" /></a></label>
+');             end 
+@output_buffer.safe_concat('            </p>
+            <p>
+            Event Begins on:
+');             if e.event_end_date == e.event_start_date 
+@output_buffer.safe_concat('             ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');             else 
+@output_buffer.safe_concat('            ');@output_buffer.append= ( format_date e.event_start_date );@output_buffer.safe_concat('  - ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');             end 
+@output_buffer.safe_concat('            </p>
+            </div>
+');             end 
+            end 
+@output_buffer.safe_concat('         </div>
+');     end 
+@output_buffer.safe_concat('  </div>
+
+</div>
+<div id="form_back"  >
+');@output_buffer.append= ( link_to 'Back Home', root_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</div>
+
+<div class=\'clear\'></div>
+');@output_buffer.append= ( link_to 'New Event', new_event_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `module_eval'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `compile'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `block in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/monster/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/monster/Documents/Rails/sklounge/app/controllers/events_controller.rb:7:in `index'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:440:in `_run__626586919826195893__process_action__2757972553675293829__callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `block in action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:48:in `_call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:36:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/showexceptions.rb:24:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/commonlogger.rb:18:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:644:in `process_client'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:717:in `block in worker_loop'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:715:in `each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:715:in `worker_loop'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:606:in `block (2 levels) in spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:603:in `fork'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:603:in `block in spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:599:in `each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:599:in `spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:613:in `maintain_worker_count'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:270:in `start'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:29:in `run'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/bin/unicorn:124:in `<top (required)>'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `load'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `<main>'
+Rendered events/index.html.erb within layouts/application (2.1ms)
+Completed   in 17ms
+
+ActionView::Template::Error (/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:81: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:83: syntax error, unexpected $end, expecting keyword_end):
+    78: <%= link_to 'New Event', new_event_path %>
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:47:29 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+ERROR: compiling _app_views_events_index_html_erb__2686500686546724791_40357700__2444806619931460628 RAISED /home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:81: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:83: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_events_index_html_erb__2686500686546724791_40357700__2444806619931460628(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "events/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id=\'event_index\'>
+
+  <div id=\'latest_event\' >
+    <div id=\'latest_list\' class=\'sidcurve shadow\'>
+      <div id=\'latest_top\'>
+        <h3>Latest Events on  ');@output_buffer.append= ( Event.month_list[Event.current_month] );@output_buffer.safe_concat(', ');@output_buffer.append= ( Event.current_year );@output_buffer.safe_concat(' </h3>
+      </div>
+      <div id=\'latest_bottom\'>
+');@output_buffer.append_if_string=        @events.each do |e| 
+@output_buffer.safe_concat('       <div id=\'event_detail\' class=\'curved\'>
+');         if e.month == Event.current_month 
+@output_buffer.safe_concat('      <p>');@output_buffer.append= ( e.event_name );@output_buffer.safe_concat(' |
+');       if e.event_end_time == e.event_start_time 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');       else 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( e.event_start_time );@output_buffer.safe_concat(' - ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');       end 
+       if current_user 
+@output_buffer.safe_concat('    <label><a href=""><img src="/images/s.png" /></a>
+    <a href=""><img src="/images/x.png" /></a></label>
+');        end 
+@output_buffer.safe_concat('      </p>
+      <p>Event Begins on:
+');       if e.event_end_date == e.event_start_date 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');         else 
+@output_buffer.safe_concat('        ');@output_buffer.append= ( format_date e.event_start_date );@output_buffer.safe_concat('  - ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');         end 
+@output_buffer.safe_concat('       </p>
+');      end 
+@output_buffer.safe_concat('       </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id=\'event_list\'>
+  <h2>Sklounge Events: Year ');@output_buffer.append= ( Event.current_year );@output_buffer.safe_concat('</h2><br/>
+');@output_buffer.append_if_string=       Event.month_list.each do |k,v| 
+@output_buffer.safe_concat('         <div id="event_holder" class=\'sidcurve\'>
+          <h3>');@output_buffer.append= ( v );@output_buffer.safe_concat('</h3>
+');@output_buffer.append_if_string=             @events.each do |e| 
+             if e.month == k 
+@output_buffer.safe_concat('            <div id=\'event_detail\' class=\'curved\'>
+            <p>');@output_buffer.append= ( e.event_name );@output_buffer.safe_concat(' |
+');             if e.event_end_time == e.event_start_time 
+@output_buffer.safe_concat('             ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');             else 
+@output_buffer.safe_concat('            ');@output_buffer.append= ( e.event_start_time );@output_buffer.safe_concat(' - ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');             end 
+             if current_user 
+@output_buffer.safe_concat('            <label><a href=""><img src="/images/s.png" /></a>
+            <a href=""><img src="/images/x.png" /></a></label>
+');             end 
+@output_buffer.safe_concat('            </p>
+            <p>
+            Event Begins on:
+');             if e.event_end_date == e.event_start_date 
+@output_buffer.safe_concat('             ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');             else 
+@output_buffer.safe_concat('            ');@output_buffer.append= ( format_date e.event_start_date );@output_buffer.safe_concat('  - ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');             end 
+@output_buffer.safe_concat('            </p>
+            </div>
+');             end 
+            end 
+@output_buffer.safe_concat('         </div>
+');     end 
+@output_buffer.safe_concat('  </div>
+
+</div>
+<div id="form_back"  >
+');@output_buffer.append= ( link_to 'Back Home', root_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</div>
+
+<div class=\'clear\'></div>
+');@output_buffer.append= ( link_to 'New Event', new_event_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `module_eval'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `compile'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `block in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/monster/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/monster/Documents/Rails/sklounge/app/controllers/events_controller.rb:7:in `index'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:440:in `_run__626586919826195893__process_action__2757972553675293829__callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `block in action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:48:in `_call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:36:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/showexceptions.rb:24:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/commonlogger.rb:18:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:644:in `process_client'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:717:in `block in worker_loop'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:715:in `each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:715:in `worker_loop'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:606:in `block (2 levels) in spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:603:in `fork'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:603:in `block in spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:599:in `each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:599:in `spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:613:in `maintain_worker_count'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:270:in `start'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:29:in `run'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/bin/unicorn:124:in `<top (required)>'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `load'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `<main>'
+Rendered events/index.html.erb within layouts/application (5.5ms)
+Completed   in 39ms
+
+ActionView::Template::Error (/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:81: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:83: syntax error, unexpected $end, expecting keyword_end):
+    78: <%= link_to 'New Event', new_event_path %>
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.8ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:47:42 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (109.6ms)
+Completed 200 OK in 125ms (Views: 113.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2010-10-18 12:48:10 +0100
+  Processing by EventsController#new as HTML
+Rendered events/_form.html.erb (38.1ms)
+Rendered events/new.html.erb within layouts/application (151.2ms)
+Completed 200 OK in 168ms (Views: 155.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2010-10-18 12:48:21 +0100
+  Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/mmIl7Gy8glpGfu6op31t+csuTx5PiTWXKe8Ws0fkmE=", "event"=>{"event_name"=>"Bucher Party", "event_start_time"=>"7pm", "event_end_time"=>"7pm", "event_start_date(1i)"=>"2010", "event_start_date(2i)"=>"11", "event_start_date(3i)"=>"18", "event_end_date(1i)"=>"2010", "event_end_date(2i)"=>"10", "event_end_date(3i)"=>"18"}, "commit"=>"Create Event"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE ("events"."event_name" = 'Bucher Party') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("event_end_date", "event_end_time", "event_name", "event_start_date", "event_start_time") VALUES ('2010-10-18', '7pm', 'Bucher Party', '2010-11-18', '7pm')
+Redirected to http://localhost:8080/events/4
+Completed 302 Found in 267ms
+
+
+Started GET "/events/4" for 127.0.0.1 at 2010-10-18 12:48:22 +0100
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events"."id" = 4) LIMIT 1[0m
+Rendered events/show.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 142ms (Views: 124.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:48:24 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 122ms (Views: 51.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:49:14 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+ERROR: compiling _app_views_events_index_html_erb__2686500686546724791_43528100__2444806619931460628 RAISED /home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:60: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:62: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_events_index_html_erb__2686500686546724791_43528100__2444806619931460628(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "events/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id=\'event_index\'>
+
+  <div id=\'latest_event\' >
+    <div id=\'latest_list\' class=\'sidcurve shadow\'>
+      <div id=\'latest_top\'>
+        <h3>Latest Events on  ');@output_buffer.append= ( Event.month_list[Event.current_month] );@output_buffer.safe_concat(', ');@output_buffer.append= ( Event.current_year );@output_buffer.safe_concat(' </h3>
+      </div>
+      <div id=\'latest_bottom\'>
+');@output_buffer.append_if_string=        @events.each do |e| 
+@output_buffer.safe_concat('       <div id=\'event_detail\' class=\'curved\'>
+
+       </div>
+     </div>
+  </div>
+
+
+  <div id=\'event_list\'>
+  <h2>Sklounge Events: Year ');@output_buffer.append= ( Event.current_year );@output_buffer.safe_concat('</h2><br/>
+');@output_buffer.append_if_string=       Event.month_list.each do |k,v| 
+@output_buffer.safe_concat('         <div id="event_holder" class=\'sidcurve\'>
+          <h3>');@output_buffer.append= ( v );@output_buffer.safe_concat('</h3>
+');@output_buffer.append_if_string=             @events.each do |e| 
+             if e.month == k 
+@output_buffer.safe_concat('            <div id=\'event_detail\' class=\'curved\'>
+            <p>');@output_buffer.append= ( e.event_name );@output_buffer.safe_concat(' |
+');             if e.event_end_time == e.event_start_time 
+@output_buffer.safe_concat('             ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');             else 
+@output_buffer.safe_concat('            ');@output_buffer.append= ( e.event_start_time );@output_buffer.safe_concat(' - ');@output_buffer.append= ( e.event_end_time );@output_buffer.safe_concat('
+');             end 
+             if current_user 
+@output_buffer.safe_concat('            <label><a href=""><img src="/images/s.png" /></a>
+            <a href=""><img src="/images/x.png" /></a></label>
+');             end 
+@output_buffer.safe_concat('            </p>
+            <p>
+            Event Begins on:
+');             if e.event_end_date == e.event_start_date 
+@output_buffer.safe_concat('             ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');             else 
+@output_buffer.safe_concat('            ');@output_buffer.append= ( format_date e.event_start_date );@output_buffer.safe_concat('  - ');@output_buffer.append= ( format_date e.event_end_date );@output_buffer.safe_concat('
+');             end 
+@output_buffer.safe_concat('            </p>
+            </div>
+');             end 
+            end 
+@output_buffer.safe_concat('         </div>
+');     end 
+@output_buffer.safe_concat('  </div>
+
+</div>
+<div id="form_back"  >
+');@output_buffer.append= ( link_to 'Back Home', root_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</div>
+
+<div class=\'clear\'></div>
+');@output_buffer.append= ( link_to 'New Event', new_event_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `module_eval'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:255:in `compile'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `block in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/monster/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/monster/Documents/Rails/sklounge/app/controllers/events_controller.rb:7:in `index'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:440:in `_run__626586919826195893__process_action__2757972553675293829__callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `block in instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `block in action'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:48:in `_call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lint.rb:36:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/showexceptions.rb:24:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/commonlogger.rb:18:in `call'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:644:in `process_client'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:717:in `block in worker_loop'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:715:in `each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:715:in `worker_loop'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:606:in `block (2 levels) in spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:603:in `fork'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:603:in `block in spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:599:in `each'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:599:in `spawn_missing_workers'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:613:in `maintain_worker_count'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:270:in `start'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/lib/unicorn.rb:29:in `run'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/gems/unicorn-1.1.4/bin/unicorn:124:in `<top (required)>'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `load'
+/home/monster/.rvm/gems/ruby-1.9.2-p0/bin/unicorn:19:in `<main>'
+Rendered events/index.html.erb within layouts/application (1.8ms)
+Completed   in 75ms
+
+ActionView::Template::Error (/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:60: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/monster/Documents/Rails/sklounge/app/views/events/index.html.erb:62: syntax error, unexpected $end, expecting keyword_end):
+    57: <%= link_to 'New Event', new_event_path %>
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:49:27 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (109.1ms)
+Completed 200 OK in 124ms (Views: 113.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:52:19 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 62ms (Views: 49.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:53:37 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.9ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (174.4ms)
+Completed 200 OK in 201ms (Views: 182.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 12:54:41 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (102.4ms)
+Completed 200 OK in 118ms (Views: 106.5ms | ActiveRecord: 0.5ms)

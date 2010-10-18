@@ -1,0 +1,50 @@
+<h1>Admin View : Reservation Page</h1>
+<br/>
+<div id='other_link' class='curved'>
+<ul>
+<li><%= link_to "User:Reservation ", reservations_path, :class=>'linkactive'  %></li>|
+<li><%= link_to "User:Gallery ", galleries_path%></li>|
+<li><%= link_to "User:Bulletin ", bulletins_path %></li>
+</ul>
+</div>
+
+<br/>
+<div id='standard_index'>
+ <h2>Listing Reservations</h2>
+
+<br/>
+<div id='form_search' class='curved'>
+</div>
+<div id='form_new' class='curved'>
+<%= link_to 'New reservation', new_reservation_path %>
+</div>
+<br/>
+<br/>
+<div id='standard_file' >
+       <% @reservations.each do |res| %>
+       <div id="repo_detail" class="curved_m">
+        <label><b>Reserver ID: </b><%= res.id %></label><br/>
+        <label><b>Name:</b>
+        <%= res.first_name %><%= " " %><%= res.last_name %>
+        </label><br/>
+        <label>Reservation Date: <%= format_date(res.reservation_date) %><br/>
+        <label>Reservation Time: <%= res.reservation_time %><br/>
+       </div>
+       <div id="standard_actions" class="curved_n">
+        <div id="show_action" class="curved_a">
+         <%= link_to "Show Details", reservation_path(res) %>
+        </div>
+        <div id="delete_action" class="curved_b">
+         <%= link_to "Delete", res, :method => :delete %>
+        </div>
+       </div>
+       <br/>
+       <% end %>
+     </div>
+
+</div>
+
+
+
+</div>
+

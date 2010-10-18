@@ -1,0 +1,8 @@
+<h2>New Bulletin </h2>
+<br/>
+<br/>
+<div id="reg_form", class = "curved">
+<%= render :partial => 'form' %>
+</div>
+
+<p><%= link_to "Back to List", bulletins_path %></p>

@@ -1,0 +1,74 @@
+<% if current_user%>
+<h1>Admin View : Gallery Page</h1>
+<br/>
+<div id='other_link' class='curved'>
+<ul>
+<li><%= link_to "User:Reservation ", reservations_path %></li>|
+<li><%= link_to "User:Gallery ", galleries_path, :class=>'linkactive' %></li>|
+<li><%= link_to "User:Bulletin ", bulletins_path %></li>
+</ul>
+</div>
+
+<% if current_user %>
+ <div id='other_link' class='curved'>
+<ul>
+<li><%= link_to "Admin: Add New Photo ", new_gallery_path %></li>|
+</ul>
+</div>
+<br/>
+<% end %>
+<%end%>
+<div id='gallery_index'>
+
+ <h1 class='htwo'><span>SK</span>Gallery </h1>
+
+<br/>
+<div id='gallery_showoff' class='boxsizing'>
+  <div class='curved'>
+  <h3>Events</h3>
+ 
+  <% @galleries.each do |g| %>
+
+  <%if g.gallery_type == "Events" %>
+    <a title="<%= g.title %>" href='<%= g.photo.url() %>' rel="prettyPhoto['<%= g.gallery_type%>']" >
+    <%= image_tag g.photo.url(:thumb) %>
+    </a>
+      <a>ggffdgd</a>
+  <% end %>
+  <% end %>
+ </div>
+
+   <ul class='curved'>
+   <h3>Dishes</h3>
+ <% @galleries.each do |g| %>
+  <%if g.gallery_type == "Dishes" %>
+    <li><a title="<%= g.title %>" href='<%= g.photo.url() %>' rel="prettyPhoto['<%= g.gallery_type%>']" >
+    <%= image_tag g.photo.url(:thumb) %>
+    </a>
+  
+    </li>
+  <% end %>
+  <% end %>
+ </ul>
+
+   <ul class='curved'>
+   <h3>SK Life</h3>
+ <% @galleries.each do |g| %>
+  <%if g.gallery_type == "SK Life" %>
+     <li><a title="<%= g.title %>" href='<%= g.photo.url() %>' rel="prettyPhoto['<%= g.gallery_type%>']" >
+    <%= image_tag g.photo.url(:thumb) %>
+    </a>
+  
+  
+    </li>
+  <% end %>
+  <% end %>
+ </ul>
+
+</div>
+
+</div>
+<div id="form_back"  >
+<%= link_to 'Back Home', lounges_path %>
+</div>
+

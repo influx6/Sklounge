@@ -1,0 +1,35 @@
+<h1 class='htwo'>Bulletin Detail</h1>
+<div id="display_form", class = "curved">
+
+
+<div id='show_bulletin'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  <%=h @bulletin.id %>
+</p>
+<br/>
+<p>
+  <b>Tilte:</b>
+  <%=h @bulletin.title %>
+</p>
+<br/>
+<p>
+  <b>Date:</b>
+  <%=h format_date(@bulletin.updated_at) %>
+</p>
+<br/>
+<p id='bulletin_message'>
+  <b>Message:</b>
+    <%=h @bulletin.message %>
+</p>
+<br/>
+
+<div id='display_link'>
+<%= link_to 'Edit', edit_bulletin_path(@bulletin) %> |
+<%= link_to 'Back', bulletins_path %>
+
+</div>
+</div>
+</div>
+

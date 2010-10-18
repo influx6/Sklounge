@@ -1,0 +1,161 @@
+#form_back:hover {
+background: rgba(0,0,0,1);
+}
+
+#form_back:hover a:hover{
+color:white;
+}
+
+#form_back{
+ position:fixed;
+ top:40%;
+ right:0px;
+ width:100px;
+ height:40px;
+ text-align:center;
+ padding:10px;
+ border-top:1px solid #000;
+ border-bottom:1px solid #000;
+ border-left:1px solid #000;
+ background: rgba(202,64,7,1);
+ background-attachment:fixed;
+}
+
+#standard_index{
+
+ width:auto;
+ border:1px solid #000;
+ background: rgba(0,0,0,0.7);
+}
+
+#standard_index h2{
+ margin-top:5px;
+ margin-left:10px;
+ text-decoration:underline;
+}
+
+#display_link{
+ margin-top:20px;
+ margin-left:200px;
+ color: #fff;
+}
+#display_form{
+
+position:relative;
+top:100px;
+color:black;
+border:1px solid #000;
+ background: rgba(0,0,0,0.7);
+ margin-left:25%;
+ height:auto;
+ width:500px;
+ padding-top:20px;
+ padding-bottom:20px;
+ padding-left:150px;
+ padding-right:10px;
+}
+
+#reg_form{
+color:black;
+border:1px solid #000;
+ background: rgba(0,0,0,0.7);
+ margin-left:25%;
+ height:auto;
+ width:500px;
+ padding-top:20px;
+ padding-bottom:20px;
+ padding-left:100px;
+ padding-right:10px;
+}
+
+
+
+#standard_file{
+color:white;
+margin-left:100px;
+padding-bottom:18px;
+}
+
+#repo_detail{
+ font-size:0.8em;
+ position:absolute;
+ width:400px;
+ height:100px;
+ border:1px solid #000;
+ background: #000;
+ padding-left:15px;
+ padding-top:7px;
+
+
+}
+
+#standard_actions{
+font-size:0.9em;
+ position:relative;
+ text-align:center;
+ margin-left:400px;
+ width:100px;
+ height:100px;
+ background: #000;
+ border-left:1px solid #333;
+}
+
+#show_action{
+ padding-top:12px;
+ width:100px;
+ height:50px;
+ border-bottom:1px solid #333;
+}
+
+#delete_action{
+padding-top:15px;
+width:100px;
+height:50px;
+}
+
+#show_action a{
+ padding:0px 2px 0px 2px;
+}
+
+#standard_actions a:hover{
+color:#000;
+}
+
+#show_action:hover{
+background: #FFA81A;
+font-color:#000;
+}
+
+#delete_action:hover{
+background: #FFA81A;
+
+}
+
+#form_new{
+ float:right;
+ margin-right:30px;
+ height:40px;
+ text-align:center;
+ padding:10px;
+ border:1px solid #000;
+ background: rgba(0,0,0,0.5);
+}
+
+#form_new_top{
+margin-left:30px;
+margin-bottom:5px;
+width:auto;
+height:50px;
+text-shadow:1px 1px 3px #000;
+
+}
+
+
+#form_new:hover {
+background: #FFA81A;
+}
+
+#form_new:hover a:hover{
+color:black;
+}
+

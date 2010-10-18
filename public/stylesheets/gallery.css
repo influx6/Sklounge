@@ -1,0 +1,72 @@
+#gallery_showoff{
+position:relative;
+top:10px;
+ left:40px;
+ width:80%;
+ min-height:100px;
+ 
+  
+}
+
+#gallery_showoff div{
+  box-sizing:border-box;
+ -webkit-box-sizing:border-box;
+ -moz-box-sizing:border-box;
+ -o-box-sizing:border-box;
+ -khtml-box-sizing:border-box;
+ border:1px solid #121212;
+ margin-bottom:10px;
+ list-style:none;
+ padding:13px;
+ width:100%;
+ min-height:50px;;
+ background: #131313;
+}
+
+#gallery_showoff div p{
+display:inline;
+position:relative;
+}
+
+#gallery_showoff div p label{
+width:200px;
+position:absolute;
+left:20px;
+bottom:-10px;
+font-size:0.8em;
+
+}
+
+#gallery_showoff div p label a:hover{
+color:#CA4007;
+}
+
+#gallery_showoff div a img{
+width:150px;
+height:160px;
+margin-left:10px;
+border:1px solid rgba(0,0,0,0.3);
+background: rgba(0,0,0,0.20);
+padding:7px;
+box-shadow:0px 0px 3px rgba(17,17,17,0.45);
+-moz-box-shadow:0px 0px 3px rgba(17,17,17,0.45);
+-khtml-box-shadow:0px 0px 3px rgba(17,17,17,0.45);
+-o-box-shadow:0px 0px 3px rgba(17,17,17,0.45);
+-webkit-box-shadow:0px 0px 3px rgba(17,17,17,0.45);
+border-radius:5px;
+-moz-border-radius:5px;
+-webkit-moz-border-radius:5px;
+-khtml-moz-border-radius:5px;
+-o-moz-border-radius:5px;
+behavior: url(border-radius.htc);
+
+}
+
+#gallery_showoff div h3{
+margin-bottom:5px;
+}
+
+.photo_link{
+position:relative;
+top:13px;
+}

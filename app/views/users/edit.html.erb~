@@ -1,0 +1,14 @@
+<title>"New User" </title>
+<br/>
+<h2 class='htwo'>New User </h2>
+<br/>
+
+
+<div id="reg_form", class = "curved">
+<%= render :partial => 'form' %>
+</div>
+
+<div id="form_back"  >
+<%= link_to 'Back Home', lounges_path %>
+</div>
+

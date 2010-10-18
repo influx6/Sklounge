@@ -1,0 +1,25 @@
+<% form_for @gallery, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+  <br/>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <br/>
+   <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :title %>
+  </p>
+  <br/>
+  <p>
+    <%= f.label :gallery_type %><br />
+    <%= f.select :gallery_type, [['Events'],['Dishes'],['SK Life']] %>
+  </p>
+  <br/>
+  <p>
+    <%= f.file_field :photo %>
+  </p>
+  <br/>
+  <p><%= f.submit %></p>
+<% end %>
+<br/>

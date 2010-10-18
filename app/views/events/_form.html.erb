@@ -1,0 +1,54 @@
+<%= form_for @event do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+      <br/>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label> Event Name </label><br />
+    <%= f.text_field :event_name %>
+  </div>
+
+<br />
+
+  <div class="field">
+    <label> Event Start Time </label><br />
+    <%= f.select :event_start_time, [['7pm'],['8pm'],['9m'],['10pm'],['11pm'],['12am']] %>
+  </div>
+
+<br />
+
+  <div class="field">
+    <label> Event End Time </label><br />
+    <%= f.select :event_end_time, [['7pm'],['8pm'],['9pm'],['10pm'],['11pm'],['12am']] %>
+  </div>
+
+<br />
+
+  <div class="field">
+    <label> Event Start Date </label><br />
+    <%= f.date_select :event_start_date %>
+  </div>
+
+<br />
+
+ <div class="field">
+    <label> Event End Date </label><br />
+    <%= f.date_select :event_end_date %>
+  </div>
+
+<br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<br />
+<% end %>
+

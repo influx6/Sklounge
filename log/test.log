@@ -1,0 +1,97 @@
+  Processing by LoungesController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0
+Completed   in 16ms
+  Processing by LoungesController#about as HTML
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.4ms)
+  Processing by LoungesController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0
+Completed   in 5ms
+  Processing by LoungesController#about as HTML
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+  Processing by BulletinsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 65ms
+  Processing by LoungesController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0
+Completed   in 19ms
+  Processing by LoungesController#about as HTML
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.4ms)
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 4ms
+  Processing by LoungesController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0
+Completed   in 4ms
+  Processing by LoungesController#about as HTML
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by LoungesController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0
+Completed   in 4ms
+  Processing by LoungesController#about as HTML
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 4ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 4ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 4ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#index as HTML
+Redirected to http://test.host/
+Completed 302 Found in 5ms
+  Processing by ReservationsController#new as HTML
+Completed   in 1ms

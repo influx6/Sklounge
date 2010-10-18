@@ -1,0 +1,53 @@
+<% form_for(@reservation) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <br/>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <br/>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <br/>
+  <p>
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </p>
+  <br/>
+  <p>
+    <%= f.label :number_of_guest %><br />
+    <%= f.text_field :number_of_guest %>
+  </p>
+  <br/>
+  <p>
+    <%= f.label :reservation_date %><br />
+    <%= f.date_select :reservation_date %>
+  </p>
+  <br/>
+  <p>
+    <%= f.label :reservation_time %><br />
+    <%= f.select :reservation_time , [['7pm'],['8pm'],['9m'],['10pm'],['11pm'],['12am']]%>
+  </p>
+  <br/>
+  <p>
+    <%= f.label :table_reservation %><br />
+    <%= f.select :table_reservation, [['Yes'], ['No']] %>
+  </p>
+  <br/>
+  <p>
+    <label>Extra Message</lable><br />
+    <%= f.text_area :extra_msg %>
+  </p>
+  <br/>
+  <p>
+    <%= f.submit submitname %>
+  </p>
+  <br/>
+<% end %>

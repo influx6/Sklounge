@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Reservations: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'main','gallery','prettyPhoto.css','definition','lounge','bulletin','reservation','about','login','root' %>
+  <!--[if IE]>
+   <%= stylesheet_link_tag 'ie' %>
+  <![endif]-->
+  <%= javascript_include_tag 'jquery-min','jquery.cycle','jquery.prettyPhoto'%>
+</head>
+<body>
+<div id='content'>
+
+<div id='flash_notice'>
+<div id='flashimg'>
+<% if flash[:notice].blank? %><%= image_tag "bulb-nactive10.png"%><% else %><%= image_tag "bulb-active10.png"%>
+<% end %>
+</div>
+<% unless flash[:notice].blank? %>
+ <div id='flashmsg'>
+  <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
+</div>
+
+<% if current_user %>
+<div id="logout_form" class="curved_p">
+<%= link_to 'Logout ', logout_path %>
+<% if request.path == users_path %>
+|<%= link_to 'SkLounge Page', root_url %>
+<% else %>
+|<%= link_to 'Back to Admin Page', users_path %>
+<% end %>
+</div>
+<% end %>
+
+
+<%= yield %>
+</div>
+</body>
+ <%= javascript_include_tag 'jquery-min','jquery.cycle','jquery.prettyPhoto'%>
+</html>
+

@@ -1,0 +1,53 @@
+
+<h1> Admins Page</h1>
+<br/>
+<div id='other_link' class='curved'>
+<ul>
+<li class='linkactive'><%= link_to "User:Reservation ", reservations_path %></li>|
+<li class='linkactive'><%= link_to "User:Gallery ", galleries_path %></li>|
+<li class='linkactive'><%= link_to "User:Bulletin ", bulletins_path %></li>
+</ul>
+</div>
+
+<h1>User View : User Page</h1>
+<br/>
+<div id='standard_index'>
+ <h2>Listing User</h2>
+
+<br/>
+<div id='form_search' class='curved'>
+</div>
+<div id='form_new' class='curved'>
+<%= link_to 'New User', new_user_path %>
+</div>
+<br/>
+<br/>
+<div id='standard_file' >
+       <% @users.each do |u| %>
+       <div id="repo_detail" class="curved_m">
+       <br/>
+        <label style='font-size:1.3em;'><b>User ID: </b><%= u.id %></label><br/>
+        <label style='font-size:1.2em;'><b>User Name: </b><%= u.login %><br/>
+           <label style='font-size:1.2em;'><b>Email: </b><%= u.email %><br/>
+       </div>
+       <div id="standard_actions" class="curved_n">
+        <div id="show_action" class="curved_a">
+         <%= link_to "Show Details", user_path(u) %>
+        </div>
+        <div id="delete_action" class="curved_b">
+         <%= link_to "Delete", u, :method => :delete %>
+        </div>
+       </div>
+       <br/>
+       <% end %>
+     </div>
+
+</div>
+
+
+
+</div>
+
+
+
+

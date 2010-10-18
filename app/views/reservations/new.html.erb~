@@ -1,0 +1,16 @@
+
+<div id='form_new_top'>
+<h1>Make SKLounge Reservation</h1>
+</div>
+<br/>
+<div id="reg_form", class = "curved">
+<%= render :partial => 'form'%>
+</div>
+
+<div id="form_back"  >
+<%= link_to 'Back', lounges_path %>
+</div>
+
+
+
+

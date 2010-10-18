@@ -1,0 +1,67 @@
+<h1 class='htwo'>Reservation Detail</h1>
+<div id="display_form", class = "curved">
+
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  <%=h @reservation.id %>
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  <%=h @reservation.first_name %><%= " "%><%=h @reservation.last_name %>
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  <%=h @reservation.email %>
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  <%=h @reservation.phone_number %>
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  <%=h @reservation.number_of_guest %>
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  <%=h @reservation.reservation_date %>
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  <%=h @reservation.reservation_time %>
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  <%=h @reservation.table_reservation %>
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+   <% if @reservation.extra_msg = "" %>
+     nill
+    <% else %>
+    <%=h @reservation.extra_msg %>
+<% end%>
+</p>
+<br/>
+
+<div id='display_link'>
+<% if current_user %>
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>
+<% else %>
+ <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+ <%= link_to 'Confirm', lounges_path %>
+<% end %>
+</div>
+</div>
+</div>

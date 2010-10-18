@@ -1,0 +1,50 @@
+<h1>Admin View : Bulletin Page</h1>
+<br/>
+<div id='other_link' class='curved'>
+<ul>
+<li><%= link_to "User:Reservation ", reservations_path %></li>|
+<li><%= link_to "User:Gallery ", galleries_path, :class=>'linkactive' %></li>|
+<li><%= link_to "User:Bulletin ", bulletins_path %></li>
+</ul>
+</div>
+
+<br/>
+<div id='standard_index'>
+ <h2>Listing bulletins</h2>
+
+<br/>
+<div id='form_search' class='curved'>
+</div>
+<div id='form_new' class='curved'>
+<%= link_to 'New bulletin', new_bulletin_path %>
+</div>
+<br/>
+<br/>
+<div id='standard_file' >
+       <% @bulletins.each do |b| %>
+       <div id="repo_detail" class="curved_m">
+        <label><b>Bulletin ID: </b><%= b.id %></label><br/>
+        <br/>
+        <label><b>Bulletin Title: </b><%= b.title %>
+        </label><br/>
+         <br/>
+        <label>Bulletin Date: <%= format_date(b.updated_at) %><br/>
+       </div>
+       <div id="standard_actions" class="curved_n">
+        <div id="show_action" class="curved_a">
+         <%= link_to "Show Details", bulletin_path(b) %>
+        </div>
+        <div id="delete_action" class="curved_b">
+         <%= link_to "Delete", b, :method => :delete %>
+        </div>
+       </div>
+       <br/>
+       <% end %>
+     </div>
+
+</div>
+
+
+
+</div>
+

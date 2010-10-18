@@ -1,0 +1,88 @@
+<div id='top_section' class='shadow_10'>
+   <div id='logo_section' class='boxsizing' >
+    <a href='Lounges'><h1>Sk</h1>
+   <img src="/images/lounges1.png" />
+   </a>
+   </div>
+   <div id='menu_section' class='boxsizing' >
+   <ul>
+    <li>
+     <%= link_to 'Home', root_path,:class => 'curved' %>
+     </li>
+     <li>
+     <%= link_to 'Make Reservations', new_reservation_path,:class => 'curved' %>
+     </li>
+     <li>
+     <%= link_to 'Gallery',galleries_path,:class => 'curved' %>
+     </li>
+      <li>
+     <%= link_to 'Events',events_path,:class => 'curved' %>
+     </li>
+     <li>
+     <%= link_to 'About',lounges_about_path ,   :class => 'curved' %>
+     </li>
+     </ul>
+   </div>
+</div>
+
+<div id='showoff_section' class='shadow_10'>
+ <div id='showoff_left'>
+
+  <div id='showoff_bar' class='shadow_10'>
+
+
+   <div class='slider'>
+     <img  src='images/td2.jpg' />
+     <img  src='images/td.png' />
+     <img  src='images/td3.jpg' />
+   </div>
+  </div>
+ </div>
+ <div id='showoff_right'>
+ <div id='showoff_desc'>
+  <h2> Show Off Desciption!</h2>
+  <p>flowed through the masses like the crazy twin stars
+  with the chaos of time,lost forever in immortal life,each piecing the world deep with the chemical X,it is lost in the flowed through the masses like the crazy twin stars
+  with the chaos of time,lost forever in immortal life,each piecing the world deep with the chemical X,it is lost in the
+  flowed through the masses like the crazy twin stars
+  with the chaos of time,lost forever in immortal life,each
+  </p>
+ </div>
+ </div>
+</div>
+
+
+<div id='middle_section'>
+ <h2>SkLounge Updates</h2>
+ <div id='bulletins_list' >
+ <% @bulletins.each do |s| %>
+   <div id='Bulletin#<%= s.id %>' class='curved'>
+    <h3 id='bheading'><%= s.title %></h3>
+    <h3 id='bdate'><%= format_date(s.created_at) %></h3>
+    <p><%= s.message %></p>
+   </div>
+ <% end %>
+
+<%= will_paginate @bulletins %>
+
+ </div>
+ <div id='social_tag'>
+  <div id='calender'>
+   <%= %>
+   <%= %>
+  </div>
+  <div id='sgtag'>
+
+    <a class='fb' href='#'></a>
+    <a class='tw' href='#'></a>
+
+  </div>
+ </div>
+</div>
+
+<div id='bottom_section' class='shadow_10s'>
+  <ul>
+   <li><a href='<%= login_url %>'><img src='#'/ ></a></li>
+  </ul>
+</div>
+

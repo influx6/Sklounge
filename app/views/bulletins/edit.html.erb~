@@ -1,0 +1,11 @@
+<h2>Edit Bulletin </h2>
+<br/>
+<br/>
+<div id="reg_form", class = "curved">
+<%= render :partial => 'form' %>
+</div>
+
+<p>
+  <%= link_to "Show", @bulletin %> |
+  <%= link_to "View All", bulletins_path %>
+</p>

@@ -1,0 +1,35 @@
+<div id="display_form", class = "curved">
+<br/>
+<p>
+  <b>Event Name: </b>
+  <%= @event.event_name %>
+</p>
+
+<br/>
+<p>
+  <b>Event Start Time:</b>
+  <%= @event.event_start_time %>
+</p>
+<br/>
+<p>
+  <b>Event End Time:</b>
+  <%= @event.event_end_time %>
+</p>
+<br/>
+<p>
+  <b>Event Date:</b>
+  <%= format_date @event.event_start_date %>
+</p>
+<br/>
+<p>
+  <b>Event Date:</b>
+  <%= format_date @event.event_end_date %>
+</p>
+<br/>
+<p>
+  <%= link_to "Edit", edit_event_path(@gallery) %> |
+  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Back", events_path %>
+</p>
+</div>
+

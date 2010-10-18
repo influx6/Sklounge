@@ -1,0 +1,28 @@
+<br/>
+
+<h2 class='htwo'>Gallery:<%= @gallery.gallery_type %>: <%= @gallery.title %></h2>
+
+<div id="display_form", class = "curved">
+<div id='gallery_img'>
+ <%= image_tag @gallery.photo.url(:small) %>
+</div>
+<br/>
+<p>
+  <strong>Title:</strong>
+  <%=h @gallery.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @gallery.description %>
+</p>
+<p>
+  <strong>Type:</strong>
+  <%=h @gallery.gallery_type %>
+</p>
+<br/>
+<p>
+  <%= link_to "Edit", edit_gallery_path(@gallery) %> |
+  <%= link_to "Destroy", @gallery, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Back", galleries_path %>
+</p>
+</div>

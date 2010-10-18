@@ -1,0 +1,31 @@
+*{
+margin:0px;
+padding:0px;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+}
+
+
+body{
+color:white;
+background: #222;
+}
+
+
+
+#content{
+margin:0px auto;
+min-width:800px;
+background: #222;
+
+}
+
+.pagination{
+  border-radius:15px;
+-moz-border-radius:15px;
+-webkit-moz-border-radius:15px;
+-khtml-moz-border-radius:15px;
+-o-moz-border-radius:15px;
+behavior: url(border-radius.htc);
+}

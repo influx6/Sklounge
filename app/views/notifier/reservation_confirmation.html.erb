@@ -1,0 +1,74 @@
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #333;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  <%=h @reservation.id %>
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  <%=h @reservation.first_name %><%= " "%><%=h @reservation.last_name %>
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  <%=h @reservation.email %>
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  <%=h @reservation.phone_number %>
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  <%=h @reservation.number_of_guest %>
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  <%=h @reservation.reservation_date %>
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  <%=h @reservation.reservation_time %>
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  <%=h @reservation.table_reservation %>
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+   <% if @reservation.extra_msg = "" %>
+     nill
+    <% else %>
+    <%=h @reservation.extra_msg %>
+<% end%>
+</p>
+<br/>
+</div>
+</body>
+</html>

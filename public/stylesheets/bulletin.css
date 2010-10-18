@@ -1,0 +1,131 @@
+#middle_section h2{
+position:relative;
+left:15px;
+font-size:1.4em;
+text-indent:1px;
+margin-bottom:3px;
+
+text-shadow: 0px 1px 1px #131313;
+}
+
+#bulletins_list_link{
+
+width:30px;
+height:10px;
+background:#000;
+}
+
+
+#show_bulletin p{
+word-wrap:break-word;
+}
+
+#bulletin_message{
+    width:300px;
+}
+
+#bulletins_list{
+
+float:left;
+width:65%;
+height:500px;
+position:relative;
+
+}
+
+#bulletins_list div{
+ width:70%;
+ height:auto;
+ background: #191919;
+  padding:10px;
+border:1px solid #171717;
+ position:relative;
+ left:50px;
+ margin-bottom:20px;
+
+}
+
+#bulletins_list h3{
+ font-size:0.9em;
+ margin:2px 5px;
+
+}
+
+#bulletins_list p{
+clear:both;
+width:90%;
+height:auto;
+
+word-wrap:break-word;
+position:relative;
+font-family: helvetica,serif,sans-serif;
+font-size:0.75em;
+margin-top:10px;
+margin-left:35px;
+
+}
+#bdate{
+float:right;
+}
+#bheading{
+float:left;
+margin-right:3px;
+}
+
+
+
+#social_tag{
+float:left;
+ width:30%;
+ height:500px;
+
+position:relative;
+}
+
+#calender{
+
+clear:both;
+height:70%;
+width:100%;
+}
+
+#sgtag{ 
+
+clear:both;
+height:30%;
+width:100%;
+padding:6px;
+}
+
+
+
+#sgtag a{
+ width:100px;
+ height:90px;
+float:right;
+
+}
+
+.fb{
+background: url("/images/facebook_sk.png");
+width:100px;
+height:90px;
+}
+
+.fb:hover{
+width:100px;
+ height:90px;
+ background: url("/images/facebook_sk_h.png");
+}
+
+.tw{
+background: url("/images/twitter_sk.png");
+width:100px;
+height:90px;
+}
+
+.tw:hover{
+width:100px;
+ height:90px;
+ background: url("/images/twitter_sk_h.png");
+}

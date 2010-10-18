@@ -1,0 +1,98 @@
+<% if current_user%>
+<h1>Admin View : Gallery Page</h1>
+<br/>
+<div id='other_link' class='curved'>
+<ul>
+<li><%= link_to "User:Reservation ", reservations_path %></li>|
+<li><%= link_to "User:Gallery ", galleries_path, :class=>'linkactive' %></li>|
+<li><%= link_to "User:Bulletin ", bulletins_path %></li>
+</ul>
+</div>
+
+<% if current_user %>
+ <div id='other_link' class='curved'>
+<ul>
+<li><%= link_to "Admin: Add New Photo ", new_gallery_path %></li>|
+</ul>
+</div>
+<br/>
+<% end %>
+<%end%>
+<div id='gallery_index'>
+
+ <h1 class='htwo'><span>SK</span>Gallery </h1>
+
+<br/>
+<div id='gallery_showoff' class='boxsizing'>
+
+  <div class='curved'>
+  <h3>Events</h3>
+ 
+  <% @galleries.each do |g| %>
+
+  <%if g.gallery_type == "Events" %>
+    <p>
+    <a title="<%= g.title %>" href='<%= g.photo.url() %>' rel="prettyPhoto['<%= g.gallery_type%>']" >
+    <%= image_tag g.photo.url(:thumb) %>
+    </a>
+    <% if current_user%>
+    <label>
+    <%= link_to "Show Detail ", gallery_path(g) %>|
+    <%= link_to "Delete ", g,:confirm => 'Are You Sure?' %>
+    </label>
+    <% end %>
+    </p>
+  <% end %>
+  <% end %>
+ </div>
+
+   <div class='curved'>
+  <h3>Dishes</h3>
+ 
+  <% @galleries.each do |g| %>
+
+  <%if g.gallery_type == "Dishes" %>
+    <p>
+    <a title="<%= g.title %>" href='<%= g.photo.url() %>' rel="prettyPhoto['<%= g.gallery_type%>']" >
+    <%= image_tag g.photo.url(:thumb) %>
+    </a>
+    <% if current_user%>
+    <label>
+    <%= link_to "Show Detail ", gallery_path(g) %>|
+    <%= link_to "Delete ", g,:confirm => 'Are You Sure?' %>
+    </label>
+    <% end %>
+    </p>
+  <% end %>
+  <% end %>
+ </div>
+ 
+   <div class='curved'>
+  <h3>SK Life</h3>
+ 
+  <% @galleries.each do |g| %>
+
+  <%if g.gallery_type == "SK Life" %>
+    <p>
+    <a title="<%= g.title %>" href='<%= g.photo.url() %>' rel="prettyPhoto['<%= g.gallery_type%>']" >
+    <%= image_tag g.photo.url(:thumb) %>
+    </a>
+    <% if current_user%>
+    <label>
+    <%= link_to "Show Detail ", gallery_path(g) %>|
+    <%= link_to "Delete ", g,:confirm => 'Are You Sure?' %>
+    </label>
+    <% end %>
+    </p>
+  <% end %>
+  <% end %>
+ </div>
+ 
+
+</div>
+
+</div>
+<div id="form_back"  >
+<%= link_to 'Back Home', root_path %>
+</div>
+

@@ -1,0 +1,30 @@
+<h1 class='htwo'>User Detail</h1>
+<div id="display_form", class = "curved">
+
+
+<div id='show_user'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  <%=h @user.id %>
+</p>
+<br/>
+<p>
+  <b>UsernName:</b>
+  <%=h @user.login %>
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+    <%=h @user.email %>
+</p>
+<br/>
+
+<div id='display_link'>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<%= link_to "Resend Password"%>
+
+</div>
+</div>
+</div>

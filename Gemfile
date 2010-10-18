@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.0.0'
 gem 'paperclip'
 gem 'will_paginate','3.0.pre2'
-gem 'runner', '0.1.4', :git => 'git://github.com/stygeo/runner.git'
+#gem 'runner', '0.1.4', :git => 'git://github.com/stygeo/runner.git'
 gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
 gem 'spork'
 gem 'meta_search'

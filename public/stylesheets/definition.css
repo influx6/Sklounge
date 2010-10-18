@@ -6,6 +6,10 @@ border:none;
 clear:both;
 }
 
+span{
+color:#FF2B00;
+}
+
 .sidcurve{
 border-radius-bottomright:15px;
 box-sizing: border-box;
@@ -332,8 +336,8 @@ background: rgba(214,70,0,1);
 display:block;
 }
 
-#form_back ul li:hover ul li:hover a:hover{
+#form_back ul li ul li:hover a{
 display:block;
-background: rgba(214,70,0,0.2);
+background: rgba(214,70,0,1);
 }
 

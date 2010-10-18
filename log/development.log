@@ -18595,3 +18595,775 @@ Started GET "/events" for 127.0.0.1 at 2010-10-18 14:37:52 +0100
   [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
 Rendered events/index.html.erb within layouts/application (45.4ms)
 Completed 200 OK in 61ms (Views: 48.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:41:09 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (106.7ms)
+Completed 200 OK in 125ms (Views: 110.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:52:35 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (108.3ms)
+Completed 200 OK in 124ms (Views: 111.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:52:46 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (107.8ms)
+Completed 200 OK in 122ms (Views: 111.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 14:52:52 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 51ms (Views: 39.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 14:52:52 +0100
+  Processing by LoungesController#index as */*
+  [1m[36mBulletin Load (6.2ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 76ms (Views: 57.3ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2010-10-18 14:52:55 +0100
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_user_sessions__form_html_erb___2766174669847141326_39518980__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/user_sessions/_form.html.erb:3)
+Rendered user_sessions/_form.html.erb (3.5ms)
+Rendered user_sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 41ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2010-10-18 14:52:58 +0100
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XMA4Pdy5JSMB+Adgjw5himunqOwOkc3zdmcKCiU1arQ=", "user_session"=>{"login"=>"sklounge", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'sklounge') LIMIT 1
+Redirected to http://localhost:8080/
+Completed 302 Found in 330ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 14:52:58 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (143.7ms)
+Completed 200 OK in 158ms (Views: 146.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 14:52:59 +0100
+  Processing by LoungesController#index as */*
+  [1m[35mBulletin Load (6.6ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 175ms (Views: 86.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 14:53:01 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_37577220__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (14.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/new.html.erb within layouts/application (130.5ms)
+Completed 200 OK in 150ms (Views: 133.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 14:53:04 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (10.7ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (119.8ms)
+Completed 200 OK in 146ms (Views: 123.4ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 14:53:05 +0100
+  Processing by LoungesController#index as */*
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (168.4ms)
+Completed 200 OK in 197ms (Views: 178.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 14:53:06 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.4ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (126.7ms)
+Completed 200 OK in 145ms (Views: 128.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:53:50 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (142.9ms)
+Completed 200 OK in 236ms (Views: 216.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/galleries/new" for 127.0.0.1 at 2010-10-18 14:53:59 +0100
+  Processing by GalleriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_galleries__form_html_erb__1660618454121465994_40653180__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/galleries/_form.html.erb:1)
+Rendered galleries/_form.html.erb (12.4ms)
+Rendered galleries/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 152ms (Views: 22.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:54:20 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (137.2ms)
+Completed 200 OK in 153ms (Views: 140.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:54:43 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (130.9ms)
+Completed 200 OK in 146ms (Views: 133.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:55:08 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (206.4ms)
+Completed 200 OK in 221ms (Views: 210.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-18 14:55:15 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins"
+Rendered bulletins/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 137ms (Views: 9.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 14:55:44 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.8ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (61.2ms)
+Completed 200 OK in 146ms (Views: 130.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 14:56:00 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered galleries/index.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 75ms (Views: 60.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-18 14:56:26 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[36mUser Load (6.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mBulletin Load (0.2ms)[0m  [1mSELECT "bulletins".* FROM "bulletins"[0m
+Rendered bulletins/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 135ms (Views: 9.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-18 14:56:38 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mBulletin Load (0.3ms)[0m  SELECT "bulletins".* FROM "bulletins"
+Rendered bulletins/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 125ms (Views: 9.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:57:10 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (130.3ms)
+Completed 200 OK in 146ms (Views: 133.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 14:57:12 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.4ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered galleries/index.html.erb within layouts/application (116.5ms)
+Completed 200 OK in 134ms (Views: 119.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2010-10-18 14:57:15 +0100
+  Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mReservation Load (4.5ms)[0m  [1mSELECT "reservations".* FROM "reservations"[0m
+Rendered reservations/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 143ms (Views: 9.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 14:59:18 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered galleries/index.html.erb within layouts/application (117.5ms)
+Completed 200 OK in 135ms (Views: 120.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-18 14:59:20 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mBulletin Load (0.2ms)[0m  [1mSELECT "bulletins".* FROM "bulletins"[0m
+Rendered bulletins/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 70ms (Views: 10.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:59:23 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (130.1ms)
+Completed 200 OK in 209ms (Views: 133.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/galleries/new" for 127.0.0.1 at 2010-10-18 14:59:28 +0100
+  Processing by GalleriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_galleries__form_html_erb__1660618454121465994_40728380__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/galleries/_form.html.erb:1)
+Rendered galleries/_form.html.erb (11.2ms)
+Rendered galleries/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 147ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 14:59:53 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (134.5ms)
+Completed 200 OK in 150ms (Views: 137.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2010-10-18 14:59:54 +0100
+  Processing by EventsController#new as HTML
+Rendered events/_form.html.erb (9.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/new.html.erb within layouts/application (133.4ms)
+Completed 200 OK in 149ms (Views: 136.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:00:41 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered galleries/index.html.erb within layouts/application (120.5ms)
+Completed 200 OK in 139ms (Views: 123.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/galleries/new" for 127.0.0.1 at 2010-10-18 15:00:45 +0100
+  Processing by GalleriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_galleries__form_html_erb__1660618454121465994_34066000__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/galleries/_form.html.erb:1)
+Rendered galleries/_form.html.erb (80.2ms)
+Rendered galleries/new.html.erb within layouts/application (86.7ms)
+Completed 200 OK in 223ms (Views: 90.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/galleries" for 127.0.0.1 at 2010-10-18 15:01:35 +0100
+  Processing by GalleriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XMA4Pdy5JSMB+Adgjw5himunqOwOkc3zdmcKCiU1arQ=", "gallery"=>{"title"=>"Pub Party", "description"=>"A party we had at the lounge", "gallery_type"=>"Events", "photo"=>#<File:/tmp/RackMultipart20101018-9030-164nfwi>}, "commit"=>"Create Gallery"}
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+[paperclip] identify -format %wx%h '/tmp/stream20101018-9030-ssnhjb.jpg[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101018-9030-ssnhjb.jpg[0]' -resize "640x400>" '/tmp/stream20101018-9030-ssnhjb20101018-9030-1l4bjx0' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20101018-9030-ssnhjb20101018-9030-1l4bjx0[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101018-9030-ssnhjb20101018-9030-1l4bjx0[0]' -resize "300x250>" '/tmp/stream20101018-9030-ssnhjb20101018-9030-1l4bjx020101018-9030-qzonwk' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20101018-9030-ssnhjb20101018-9030-1l4bjx0[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101018-9030-ssnhjb20101018-9030-1l4bjx0[0]' -resize "150x150" '/tmp/stream20101018-9030-ssnhjb20101018-9030-1l4bjx020101018-9030-1mybq6i' 2>/dev/null
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "galleries" ("created_at", "description", "gallery_type", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "title", "updated_at") VALUES ('2010-10-18 14:01:36.484638', 'A party we had at the lounge', 'Events', 'image/jpeg', '36ir-bluefley-impossible-lov3.jpg', 72900, '2010-10-18 14:01:35.749268', 'Pub Party', '2010-10-18 14:01:36.484638')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/original/36ir-bluefley-impossible-lov3.jpg
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/small/36ir-bluefley-impossible-lov3.jpg
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/thumb/36ir-bluefley-impossible-lov3.jpg
+Redirected to http://localhost:8080/galleries/1
+Completed 302 Found in 1174ms
+
+
+Started GET "/galleries/1" for 127.0.0.1 at 2010-10-18 15:01:36 +0100
+  Processing by GalleriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mGallery Load (0.2ms)[0m  SELECT "galleries".* FROM "galleries" WHERE ("galleries"."id" = 1) LIMIT 1
+Rendered galleries/show.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 149ms (Views: 23.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:01:44 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.6ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (204.5ms)
+Completed 200 OK in 225ms (Views: 208.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:22:13 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (126.0ms)
+Completed 200 OK in 202ms (Views: 129.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:22:23 +0100
+  Processing by LoungesController#about as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/about.html.erb within layouts/application (120.2ms)
+Completed 200 OK in 124ms (Views: 123.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:22:38 +0100
+  Processing by LoungesController#about as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/about.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 126ms (Views: 125.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:22:40 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_36162420__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (16.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/new.html.erb within layouts/application (139.3ms)
+Completed 200 OK in 157ms (Views: 142.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:22:46 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (2.7ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (121.1ms)
+Completed 200 OK in 139ms (Views: 124.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:22:46 +0100
+  Processing by LoungesController#index as */*
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 155ms (Views: 72.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:23:35 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (149.3ms)
+Completed 200 OK in 172ms (Views: 151.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2010-10-18 15:23:49 +0100
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:8080/
+Completed 302 Found in 109ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:23:49 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (96.2ms)
+Completed 200 OK in 112ms (Views: 100.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:23:49 +0100
+  Processing by LoungesController#index as */*
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 68ms (Views: 56.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:23:52 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 64ms (Views: 51.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:28:02 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (47.4ms)
+Completed 200 OK in 64ms (Views: 51.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:28:15 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (116.1ms)
+Completed 200 OK in 133ms (Views: 120.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:28:20 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 50ms (Views: 38.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:28:21 +0100
+  Processing by LoungesController#index as */*
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 62ms (Views: 50.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:28:22 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.5ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+Rendered galleries/index.html.erb within layouts/application (114.6ms)
+Completed 200 OK in 134ms (Views: 118.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:28:29 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (108.9ms)
+Completed 200 OK in 125ms (Views: 112.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:29:15 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (122.7ms)
+Completed 200 OK in 140ms (Views: 126.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:29:35 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.6ms)[0m  SELECT "galleries".* FROM "galleries"
+Rendered galleries/index.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 132ms (Views: 54.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:29:40 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 52ms (Views: 39.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:29:41 +0100
+  Processing by LoungesController#index as */*
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (217.3ms)
+Completed 200 OK in 239ms (Views: 227.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:29:43 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.6ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+Rendered galleries/index.html.erb within layouts/application (119.5ms)
+Completed 200 OK in 140ms (Views: 123.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:29:47 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+Rendered galleries/index.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 138ms (Views: 58.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:29:49 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 61ms (Views: 48.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:30:16 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (104.8ms)
+Completed 200 OK in 136ms (Views: 118.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:31:16 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (121.7ms)
+Completed 200 OK in 138ms (Views: 125.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:31:42 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (215.7ms)
+Completed 200 OK in 233ms (Views: 219.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:33:09 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_38216080__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (16.7ms)
+Rendered reservations/new.html.erb within layouts/application (122.6ms)
+Completed 200 OK in 143ms (Views: 126.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:33:15 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:34:51 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (106.3ms)
+Completed 200 OK in 122ms (Views: 110.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:34:51 +0100
+  Processing by LoungesController#index as */*
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (113.3ms)
+Completed 200 OK in 136ms (Views: 123.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:35:09 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (121.9ms)
+Completed 200 OK in 140ms (Views: 125.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:36:54 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (10.3ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 145ms (Views: 122.3ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:37:26 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (106.9ms)
+Completed 200 OK in 122ms (Views: 110.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:37:32 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+Rendered galleries/index.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 131ms (Views: 55.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:38:06 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.5ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+Rendered galleries/index.html.erb within layouts/application (120.8ms)
+Completed 200 OK in 140ms (Views: 124.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:38:13 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 116ms (Views: 115.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:38:32 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_33940100__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (85.5ms)
+Rendered reservations/new.html.erb within layouts/application (123.6ms)
+Completed 200 OK in 149ms (Views: 127.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:39:03 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_41476020__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (17.7ms)
+Rendered reservations/new.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 146ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:39:23 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (98.8ms)
+Completed 200 OK in 103ms (Views: 102.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:41:00 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:41:44 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (151.8ms)
+Completed 200 OK in 191ms (Views: 162.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:43:18 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (111.9ms)
+Completed 200 OK in 135ms (Views: 115.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:43:50 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (107.2ms)
+Completed 200 OK in 123ms (Views: 110.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:43:57 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_40701560__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (16.2ms)
+Rendered reservations/new.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 131ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:44:11 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_37310800__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (16.3ms)
+Rendered reservations/new.html.erb within layouts/application (121.3ms)
+Completed 200 OK in 141ms (Views: 125.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:44:47 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_40514800__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (17.8ms)
+Rendered reservations/new.html.erb within layouts/application (57.3ms)
+Completed 200 OK in 144ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:45:24 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_41596520__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (22.1ms)
+Rendered reservations/new.html.erb within layouts/application (66.9ms)
+Completed 200 OK in 195ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:46:36 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_36861100__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (85.8ms)
+Rendered reservations/new.html.erb within layouts/application (124.8ms)
+Completed 200 OK in 144ms (Views: 128.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:46:50 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:47:01 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:47:08 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (99.0ms)
+Completed 200 OK in 104ms (Views: 103.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:47:16 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (101.5ms)
+Completed 200 OK in 106ms (Views: 105.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:47:23 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 64ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lounges/about" for 127.0.0.1 at 2010-10-18 15:52:55 +0100
+  Processing by LoungesController#about as HTML
+Rendered lounges/about.html.erb within layouts/application (109.6ms)
+Completed 200 OK in 114ms (Views: 113.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:52:57 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 116ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 15:52:58 +0100
+  Processing by LoungesController#index as */*
+  [1m[35mBulletin Load (0.9ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (126.0ms)
+Completed 200 OK in 183ms (Views: 152.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-18 15:53:00 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4058762557992881127_42914300__4588774213184190722 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (17.4ms)
+Rendered reservations/new.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 135ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-18 15:53:05 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.5ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+Rendered galleries/index.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 138ms (Views: 55.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 15:53:08 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 61ms (Views: 48.8ms | ActiveRecord: 0.5ms)

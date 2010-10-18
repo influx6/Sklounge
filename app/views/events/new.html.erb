@@ -6,10 +6,11 @@
 <%= render :partial => 'form' %>
 </div>
 
-<div id="form_back"  >
+  <div id="form_back"  >
 <ul>
-<li><%= link_to 'Back Home', root_path%>
+<li>Back
 <ul>
+<li><%= link_to 'Home', root_path%></li>
 <li><%= link_to 'Make Reservation', new_reservation_path%></li>
 <li>  <%= link_to 'Gallery',galleries_path %></li>
 <li>

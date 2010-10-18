@@ -5,7 +5,8 @@
 <ul>
 <li><%= link_to "User:Reservation ", reservations_path %></li>|
 <li><%= link_to "User:Gallery ", galleries_path, :class=>'linkactive' %></li>|
-<li><%= link_to "User:Bulletin ", bulletins_path %></li>
+<li><%= link_to "User:Bulletin ", bulletins_path %></li>|
+<li><%= link_to "User:Events ", events_path%></li>
 </ul>
 </div>
 
@@ -20,7 +21,7 @@
 <%end%>
 <div id='gallery_index'>
 
- <h1 class='htwo'><span>SK</span>Gallery </h1>
+ <h1 class='htwo'> <span style="color:#FF2B00">SK</span>Gallery </h1>
 
 <br/>
 <div id='gallery_showoff' class='boxsizing'>
@@ -93,10 +94,11 @@
 
 </div>
 
-<div id="form_back"  >
+  <div id="form_back"  >
 <ul>
-<li><%= link_to 'Back Home', root_path%>
+<li>Back
 <ul>
+<li><%= link_to 'Home', root_path%></li>
 <li><%= link_to 'Make Reservation', new_reservation_path%></li>
 <li>  <%= link_to 'Gallery',galleries_path %></li>
 <li>

@@ -2,7 +2,7 @@
 <div id='about_index'>
  <div id='about_top' >
  <h1>About Us!</h1>
- <h3>SKLounge Rep.<h3>
+ <span><h3>SKLounge Rep.<h3></span>
  </div>
  <br/>
  <div id='about_desc'>
@@ -13,8 +13,9 @@
 
   <div id="form_back"  >
 <ul>
-<li><%= link_to 'Back Home', root_path%>
+<li>Back
 <ul>
+<li><%= link_to 'Home', root_path%></li>
 <li><%= link_to 'Make Reservation', new_reservation_path%></li>
 <li>  <%= link_to 'Gallery',galleries_path %></li>
 <li>

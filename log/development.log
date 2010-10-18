@@ -16682,3 +16682,32 @@ Migrating to CreateEvents (20101013195126)
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("galleries")
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("reservations")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 01:12:21 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 161ms (Views: 134.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 01:12:23 +0100
+  Processing by LoungesController#index as */*
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 61ms (Views: 49.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:12:25 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (48.6ms)
+Completed 200 OK in 192ms (Views: 140.7ms | ActiveRecord: 0.5ms)

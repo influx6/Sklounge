@@ -3,17 +3,42 @@
   <div id='latest_event' >
     <div id='latest_list' class='sidcurve shadow'>
       <div id='latest_top'>
-        <h3>Latest Events</h3>
+        <h3>Latest Events on  <%= Event.month_list[Event.current_month] %>, <%= Event.current_year %> </h3>
       </div>
       <div id='latest_bottom'>
+      <% @events.each do |e| %>
+       <div id='event_detail' class='curved'>
 
+        <% if e.month == Event.current_month %>
+              <p><%= e.event_name %> |
+            <% if e.event_end_time == e.event_start_time %>
+             <%= e.event_end_time %>
+            <% else %>
+            <%= e.event_start_time %> - <%= e.event_end_time %>
+            <% end %>
+            <% if current_user %>
+            <label><a href=""><img src="/images/s.png" /></a>
+            <a href=""><img src="/images/x.png" /></a></label>
+            <% end %>
+            </p>
+            <p>
+            Event Begins on:
+            <% if e.event_end_date == e.event_start_date %>
+             <%= format_date e.event_end_date %>
+            <% else %>
+            <%= format_date e.event_start_date %>  - <%= format_date e.event_end_date %>
+            <% end %>
+            </p>
+        <% end %>
+       </div>
+        <% end %>
       </div>
     </div>
   </div>
 
 
   <div id='event_list'>
-  <h2>Sklounge Events: Year <%= Date.today.year %></h2><br/>
+  <h2>Sklounge Events: Year <%= Event.current_year %></h2><br/>
      <% Event.month_list.each do |k,v| %>
          <div id="event_holder" class='sidcurve'>
           <h3><%= v %></h3>

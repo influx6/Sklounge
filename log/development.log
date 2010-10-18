@@ -16711,3 +16711,123 @@ Started GET "/events" for 127.0.0.1 at 2010-10-18 01:12:25 +0100
   [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
 Rendered events/index.html.erb within layouts/application (48.6ms)
 Completed 200 OK in 192ms (Views: 140.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:35:59 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 115ms (Views: 48.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:38:48 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (99.2ms)
+Completed 200 OK in 115ms (Views: 103.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 01:38:53 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 49ms (Views: 38.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-18 01:38:54 +0100
+  Processing by LoungesController#index as */*
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 71ms (Views: 48.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:39:20 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 67ms (Views: 53.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:50:39 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (36.9ms)
+Completed   in 52ms
+
+ActionView::Template::Error (undefined method `month' for nil:NilClass):
+    7:       </div>
+    8:       <div id='latest_bottom'>
+    9:        <div id='event_detail' class='curved'>
+    10:         <% if @event.month == Event.current_month %>
+    11:               <p><%= e.event_name %> |
+    12:             <% if e.event_end_time == e.event_start_time %>
+    13:              <%= e.event_end_time %>
+  app/views/events/index.html.erb:10:in `_app_views_events_index_html_erb__2686500686546724791_39164240__2444806619931460628'
+  app/controllers/events_controller.rb:7:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.7ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (69.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:51:54 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (99.2ms)
+Completed 200 OK in 116ms (Views: 103.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:52:47 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 59ms (Views: 48.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:54:11 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (97.6ms)
+Completed 200 OK in 113ms (Views: 101.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:55:51 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (108.7ms)
+Completed 200 OK in 124ms (Views: 112.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:56:02 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 60ms (Views: 48.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:56:17 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (97.3ms)
+Completed 200 OK in 112ms (Views: 101.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:56:42 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (106.4ms)
+Completed 200 OK in 131ms (Views: 110.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 01:56:49 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered events/index.html.erb within layouts/application (103.1ms)
+Completed 200 OK in 118ms (Views: 107.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-18 08:14:31 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (101.7ms)
+Completed 200 OK in 117ms (Views: 105.7ms | ActiveRecord: 0.5ms)

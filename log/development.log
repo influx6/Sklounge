@@ -21811,3 +21811,628 @@ Started GET "/" for 127.0.0.1 at 2010-10-20 20:47:10 +0100
   [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
 Rendered lounges/index.html.erb within layouts/application (118.9ms)
 Completed 200 OK in 134ms (Views: 121.9ms | ActiveRecord: 1.0ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (139.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (80.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20100911050834)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "user_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100911050834')
+Migrating to CreateBulletins (20100911050941)
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "bulletins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "message" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100911050941')
+Migrating to CreateReservations (20100911051011)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "reservations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "phone_number" integer, "number_of_guest" varchar(255), "reservation_date" date, "reservation_time" varchar(255), "table_reservation" varchar(255), "extra_msg" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100911051011')
+Migrating to CreateGalleries (20100911051028)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "galleries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "gallery_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100911051028')
+Migrating to AddAttachmentPhotoToGallery (20100911052959)
+  [1m[36mSQL (0.5ms)[0m  [1mALTER TABLE "galleries" ADD "photo_file_name" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  ALTER TABLE "galleries" ADD "photo_content_type" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "galleries" ADD "photo_file_size" integer[0m
+  [1m[35mSQL (5.3ms)[0m  ALTER TABLE "galleries" ADD "photo_updated_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20100911052959')[0m
+Migrating to CreateEvents (20101013195126)
+  [1m[35mSQL (0.5ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_name" varchar(255), "event_start_time" varchar(255), "event_end_time" varchar(255), "event_start_date" date, "event_end_date" date) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101013195126')[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (6.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("bulletins")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("galleries")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("reservations")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."login" = 'sklounge') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('sklounge@gmail.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('sklounge')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '8e8353a0c2558bca2d5d8032a1134ab61f12d6b397e703baad6a200fba5e9460313edfa5785a75f8a4bd8aed464c5276ea0d7113261168ecd8c4129532be776b') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "crypted_password", "email", "login", "password_salt", "persistence_token", "updated_at", "user_type") VALUES ('2010-10-20 20:14:26.369430', '1821a0c508761bfb0bdaae53cadb58a3bd748792788ef982587124e5015d9266bff9076a9143c88c6e38198b5715c6923d3c53708cd4afc432234dd5761cb9a8', 'sklounge@gmail.com', 'sklounge', 'hxlikIDucmmDmQSkcfG', '8e8353a0c2558bca2d5d8032a1134ab61f12d6b397e703baad6a200fba5e9460313edfa5785a75f8a4bd8aed464c5276ea0d7113261168ecd8c4129532be776b', '2010-10-20 20:14:26.369430', NULL)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-20 21:14:42 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__622474763517394777_34372580__4305534229177098435 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (51.1ms)
+Rendered reservations/new.html.erb within layouts/application (116.7ms)
+Completed 200 OK in 231ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-20 21:15:07 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DtOOXK2+NWLgLtr4Mg4pr0qVo2ntkKhDgSpByXWgAI=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"22", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"20", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-20 20:15:07.140853', 'dfgdgd@sd.com', '', 'alex', 'ddddgf', '22', 6465444645, '2010-10-20', '7pm', 'Yes', '2010-10-20 20:15:07.140853')
+Rendered notifier/reservation_confirmation.html.erb (1.5ms)
+
+Sent mail to dfgdgd@sd.com (72ms)
+Date: Wed, 20 Oct 2010 21:15:07 +0100
+From: sklounge@gmail.com
+To: dfgdgd@sd.com
+Message-ID: <4cbf4dcb886c7_778b833ed45546b@monster-laptop.mail>
+Subject: SKlounge:: Thank you Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #333;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  1
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  alex ddddgf
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  dfgdgd@sd.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  6465444645
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  22
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-20
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+Completed   in 487ms
+
+SocketError (getaddrinfo: Name or service not known):
+  app/controllers/reservations_controller.rb:50:in `block in create'
+  app/controllers/reservations_controller.rb:48:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.1ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.6ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-20 21:16:39 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__2484793396043136734_29337380_654846388824850365 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (86.7ms)
+Rendered reservations/new.html.erb within layouts/application (136.5ms)
+Completed 200 OK in 163ms (Views: 141.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-20 21:16:52 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DtOOXK2+NWLgLtr4Mg4pr0qVo2ntkKhDgSpByXWgAI=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"3", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"20", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-20 20:16:52.235330', 'dfgdgd@sd.com', '', 'alex', 'ddddgf', '3', 6465444645, '2010-10-20', '7pm', 'Yes', '2010-10-20 20:16:52.235330')
+Rendered notifier/reservation_confirmation.html.erb (1.4ms)
+
+Sent mail to dfgdgd@sd.com (70ms)
+Date: Wed, 20 Oct 2010 21:16:52 +0100
+From: sklounge@gmail.com
+To: dfgdgd@sd.com
+Message-ID: <4cbf4e34a26b8_77c81bc6a0090421@monster-laptop.mail>
+Subject: SKlounge:: Thank you Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #333;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  2
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  alex ddddgf
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  dfgdgd@sd.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  6465444645
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  3
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-20
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+Completed   in 492ms
+
+SocketError (getaddrinfo: Name or service not known):
+  app/controllers/reservations_controller.rb:50:in `block in create'
+  app/controllers/reservations_controller.rb:48:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-20 21:17:34 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__2484793396043136734_33254620_654846388824850365 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (23.3ms)
+Rendered reservations/new.html.erb within layouts/application (69.8ms)
+Completed 200 OK in 94ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-20 21:17:45 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DtOOXK2+NWLgLtr4Mg4pr0qVo2ntkKhDgSpByXWgAI=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"3", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"20", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-20 20:17:45.523062', 'dfgdgd@sd.com', '', 'alex', 'ddddgf', '3', 6465444645, '2010-10-20', '7pm', 'Yes', '2010-10-20 20:17:45.523062')[0m
+Redirected to http://localhost:3000/reservations/3
+Completed 302 Found in 268ms
+
+
+Started GET "/reservations/3" for 127.0.0.1 at 2010-10-20 21:17:45 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mReservation Load (0.3ms)[0m  SELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 3) LIMIT 1
+Rendered reservations/show.html.erb within layouts/application (127.3ms)
+Completed 200 OK in 155ms (Views: 132.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-20 21:18:06 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.6ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (113.3ms)
+Completed 200 OK in 134ms (Views: 119.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2010-10-20 21:18:14 +0100
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_user_sessions__form_html_erb___4160822670951415815_28450920_654846388824850365 at /home/monster/Documents/Rails/sklounge/app/views/user_sessions/_form.html.erb:3)
+Rendered user_sessions/_form.html.erb (5.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 58ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2010-10-20 21:18:32 +0100
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DtOOXK2+NWLgLtr4Mg4pr0qVo2ntkKhDgSpByXWgAI=", "user_session"=>{"login"=>"sklounge", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'sklounge') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 261ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-20 21:18:33 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (152.4ms)
+Completed 200 OK in 170ms (Views: 156.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-20 21:18:39 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__2484793396043136734_32067680_654846388824850365 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (25.3ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered reservations/new.html.erb within layouts/application (199.2ms)
+Completed 200 OK in 331ms (Views: 206.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-20 21:18:53 +0100
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 101ms (Views: 34.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-20 21:18:59 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mBulletin Load (0.2ms)[0m  [1mSELECT "bulletins".* FROM "bulletins"[0m
+Rendered bulletins/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 172ms (Views: 27.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-20 21:19:03 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (152.6ms)
+Completed 200 OK in 171ms (Views: 157.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-20 21:19:09 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.6ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (147.2ms)
+Completed 200 OK in 171ms (Views: 151.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2010-10-20 21:19:11 +0100
+  Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mReservation Load (0.4ms)[0m  SELECT "reservations".* FROM "reservations"
+Rendered reservations/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 183ms (Views: 40.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-20 21:19:16 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.6ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (152.2ms)
+Completed 200 OK in 176ms (Views: 156.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-20 21:19:24 +0100
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 144ms (Views: 14.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2010-10-20 21:20:01 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 151ms (Views: 23.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2010-10-20 21:20:14 +0100
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users__form_html_erb__2593654365908376048_19959160_654846388824850365 at /home/monster/Documents/Rails/sklounge/app/views/users/_form.html.erb:2)
+Rendered users/_form.html.erb (7.5ms)
+Rendered users/edit.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 124ms (Views: 63.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-20 21:21:25 +0100
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 150ms (Views: 16.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2010-10-20 21:21:30 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered users/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 139ms (Views: 12.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-20 21:21:37 +0100
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (78.9ms)
+Completed 200 OK in 144ms (Views: 84.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2010-10-20 21:22:01 +0100
+  Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mReservation Load (0.4ms)[0m  SELECT "reservations".* FROM "reservations"
+Rendered reservations/index.html.erb within layouts/application (102.3ms)
+Completed 200 OK in 183ms (Views: 107.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reservations/1" for 127.0.0.1 at 2010-10-20 21:22:16 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReservation Load (0.3ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered reservations/show.html.erb within layouts/application (160.1ms)
+Completed 200 OK in 187ms (Views: 164.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2010-10-20 21:22:25 +0100
+  Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mReservation Load (0.4ms)[0m  SELECT "reservations".* FROM "reservations"
+Rendered reservations/index.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 176ms (Views: 37.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-20 22:10:39 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.1ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (166.1ms)
+Completed 200 OK in 396ms (Views: 325.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-20 22:10:43 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__3751790858826685671_30541940__3743645419630115205 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (34.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered reservations/new.html.erb within layouts/application (183.5ms)
+Completed 200 OK in 233ms (Views: 203.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-20 22:10:52 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YnLDbTH10H4coIR71/MTovQ6JbXnG77kcKAEOIIwkN4=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"2", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"20", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-20 21:10:53.092518', 'dfgdgd@sd.com', '', 'alex', 'ddddgf', '2', 6465444645, '2010-10-20', '7pm', 'Yes', '2010-10-20 21:10:53.092518')
+Rendered notifier/reservation_confirmation.html.erb (1.0ms)
+
+Sent mail to dfgdgd@sd.com (5770ms)
+Date: Wed, 20 Oct 2010 22:10:53 +0100
+From: sklounge@gmail.com
+To: dfgdgd@sd.com
+Message-ID: <4cbf5add8d45d_dab6e1edc85543@monster-laptop.mail>
+Subject: SKlounge:: Thank you Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #333;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  4
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  alex ddddgf
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  dfgdgd@sd.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  6465444645
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  2
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-20
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+Redirected to http://localhost:8080/reservations/4
+Completed 302 Found in 6276ms
+
+
+Started GET "/reservations/4" for 127.0.0.1 at 2010-10-20 22:10:59 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mReservation Load (0.3ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 4) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered reservations/show.html.erb within layouts/application (135.7ms)
+Completed 200 OK in 173ms (Views: 152.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2010-10-20 22:11:03 +0100
+  Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mReservation Load (0.4ms)[0m  SELECT "reservations".* FROM "reservations"
+Rendered reservations/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 157ms (Views: 45.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-20 22:28:32 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (132.8ms)
+Completed 200 OK in 148ms (Views: 136.0ms | ActiveRecord: 1.0ms)

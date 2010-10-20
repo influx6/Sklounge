@@ -47,7 +47,7 @@ class ReservationsController < ApplicationController
 
     respond_to do |format|
       if @reservation.save
-
+        Notifier.reservation_confirmation(@reservation).deliver
         format.html {
         redirect_to(@reservation, :notice => 'Reservation created successfully.') }
         format.xml  { render :xml => @reservation, :status => :created, :location => @reservation }

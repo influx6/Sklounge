@@ -21626,3 +21626,148 @@ ActionView::Template::Error (undefined local variable or method `lounges_path' f
 Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
 Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.9ms)
 Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.0ms)
+
+
+Started GET "/reservations/1" for 127.0.0.1 at 2010-10-20 20:24:46 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReservation Load (0.3ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 1) LIMIT 1[0m
+Rendered reservations/show.html.erb within layouts/application (164.9ms)
+Completed 200 OK in 199ms (Views: 173.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-20 20:24:54 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.6ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 71ms (Views: 55.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-20 20:24:58 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.7ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+Rendered galleries/index.html.erb within layouts/application (71.9ms)
+Completed 200 OK in 98ms (Views: 77.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-20 20:27:56 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__3810033897700261465_28827620__398890285415852451 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (22.5ms)
+Rendered reservations/new.html.erb within layouts/application (74.2ms)
+Completed 200 OK in 100ms (Views: 79.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-20 20:28:05 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DtOOXK2+NWLgLtr4Mg4pr0qVo2ntkKhDgSpByXWgAI=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"e", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"20", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__3810033897700261465_28469040__398890285415852451 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (12.7ms)
+Rendered reservations/new.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 113ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-20 20:28:13 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DtOOXK2+NWLgLtr4Mg4pr0qVo2ntkKhDgSpByXWgAI=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"4", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"20", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"Create Reservation"}
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-20 19:28:13.171331', 'dfgdgd@sd.com', '', 'alex', 'ddddgf', '4', 6465444645, '2010-10-20', '7pm', 'Yes', '2010-10-20 19:28:13.171331')
+Rendered notifier/reservation_confirmation.html.erb (1.4ms)
+
+Sent mail to dfgdgd@sd.com (3909ms)
+Date: Wed, 20 Oct 2010 20:28:13 +0100
+From: sklounge@gmail.com
+To: dfgdgd@sd.com
+Message-ID: <4cbf42cd50c06_ca177eed081a7@monster-laptop.mail>
+Subject: SKlounge:: Thank you Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #333;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  2
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  alex ddddgf
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  dfgdgd@sd.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  6465444645
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  4
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-20
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+Redirected to http://localhost:8080/reservations/2
+Completed 302 Found in 4104ms
+
+
+Started GET "/reservations/2" for 127.0.0.1 at 2010-10-20 20:28:17 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReservation Load (0.3ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 2) LIMIT 1[0m
+Rendered reservations/show.html.erb within layouts/application (147.0ms)
+Completed 200 OK in 177ms (Views: 151.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-20 20:28:20 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.6ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+Rendered lounges/index.html.erb within layouts/application (132.4ms)
+Completed 200 OK in 151ms (Views: 137.1ms | ActiveRecord: 0.6ms)

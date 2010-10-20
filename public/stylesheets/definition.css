@@ -10,6 +10,10 @@ span{
 color:#FF2B00;
 }
 
+.pushleft{
+    margin-left:13px;
+}
+
 .sidcurve{
 border-radius-bottomright:15px;
 box-sizing: border-box;
@@ -231,6 +235,10 @@ border:2px solid red;
  src: url("/fonts/bobcaygr.ttf");
 }
 
+@font-face{
+ font-family: aistream;
+ src: url("/fonts/Airstream.ttf");
+}
 
 #flash_notice{
 position:fixed;

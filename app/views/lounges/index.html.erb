@@ -53,7 +53,7 @@
 
 
 <div id='middle_section'>
- <h2>SkLounge Updates</h2>
+ <h1 class='pushleft'><span>SkLounge</span> Updates</h1>
  <div id='bulletins_list' >
  <% @bulletins.each do |s| %>
    <div id='Bulletin#<%= s.id %>' class='curved'>
@@ -80,9 +80,18 @@
  </div>
 </div>
 
-<div id='bottom_section' class='shadow_10s'>
-  <ul>
-   <li><a href='<%= login_url %>'><img src='#'/ ></a></li>
-  </ul>
+<div class='clear'></div>
+
+<div id='bottom_section' >
+  <div id='bottom_left'>
+
+  </div>
+  <div id='bottom_right'>
+<h3 class=' pushleft textshadow'><span>Our Sponsors & Friends</span></h3>
+    <p id='sponsor' class='curved'>
+     <a href='/login' class='textshadow'><span>SK</span>Admin</a>
+     <a href='/login' class='textshadow'><span>MD</span>.com</a>
+    </p>
+  </div>
 </div>
 

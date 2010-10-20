@@ -55,7 +55,7 @@ float:right;
 }
 
 #menu_section ul li a{
-font-family:Bobcaygeon;
+font-family:Bobcaygeon,aistream;
 font-size:1.6em;
 text-align:center;
 padding:8px;
@@ -174,8 +174,6 @@ overflow:hidden;
 
 
 #middle_section{
-
-clear:both;
 box-sizing:border-box;
  -webkit-box-sizing:border-box;
  -moz-box-sizing:border-box;
@@ -187,19 +185,36 @@ margin-bottom:10px;
 }
 
 #bottom_section{
-box-sizing:border-box;
- -webkit-box-sizing:border-box;
- -moz-box-sizing:border-box;
- -o-box-sizing:border-box;
- -khtml-box-sizing:border-box;
- border-top:1px solid rgba(0,0,0,1);
- box-shadow:-7px -3px 7px #000;
- -moz-box-shadow:-7px -3px 7px #000;
- -webkit-box-shadow:-7px -3px 7px #000;
- -opera-box-shadow:-7px -3px 7px #000;
- -khtml-box-shadow:-7px -3px 7px #000;
 width:100%;
-height:100px;
+height:150px;
+border-top:1px solid #050505;
+background: #0D0D0D;
 
+}
+
+#bottom_section div{
+float:left;
+margin-top:5px;
+width:47%;
+height:140px;
+
+}
+
+#bottom_left{}
+
+#bottom_right{  }
+
+#sponsor{
+  border:1px solid #040404;
+  background: #050505;
+  width:100%;
+  height:90px;
+  overflow:hidden;
+  padding:10px;
+}
+#sponsor a {
+  font-family: airstream,sans-serif;
+  font-size:3.0em;
+  margin-right:3px;
 }
 

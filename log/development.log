@@ -21496,3 +21496,133 @@ Started GET "/lounges/about" for 127.0.0.1 at 2010-10-20 20:08:09 +0100
   Processing by LoungesController#about as HTML
 Rendered lounges/about.html.erb within layouts/application (33.5ms)
 Completed 200 OK in 37ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-20 20:13:30 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (124.3ms)
+Completed 200 OK in 140ms (Views: 127.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-20 20:22:48 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__3810033897700261465_29286280__398890285415852451 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (61.4ms)
+Rendered reservations/new.html.erb within layouts/application (157.1ms)
+Completed 200 OK in 339ms (Views: 178.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-20 20:22:57 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DtOOXK2+NWLgLtr4Mg4pr0qVo2ntkKhDgSpByXWgAI=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"23", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"20", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-20 19:22:57.625941', 'dfgdgd@sd.com', '', 'alex', 'ddddgf', '23', 6465444645, '2010-10-20', '7pm', 'Yes', '2010-10-20 19:22:57.625941')[0m
+Rendered notifier/reservation_confirmation.html.erb (1.4ms)
+
+Sent mail to dfgdgd@sd.com (6534ms)
+Date: Wed, 20 Oct 2010 20:22:58 +0100
+From: sklounge@gmail.com
+To: dfgdgd@sd.com
+Message-ID: <4cbf41927aa1f_ca177eed0807e@monster-laptop.mail>
+Subject: SKlounge:: Thank you Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #333;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  1
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  alex ddddgf
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  dfgdgd@sd.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  6465444645
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  23
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-20
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+Redirected to http://localhost:8080/reservations/1
+Completed 302 Found in 7279ms
+
+
+Started GET "/reservations/1" for 127.0.0.1 at 2010-10-20 20:23:04 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReservation Load (0.4ms)[0m  SELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 1) LIMIT 1
+Rendered reservations/show.html.erb within layouts/application (266.4ms)
+Completed   in 337ms
+
+ActionView::Template::Error (undefined local variable or method `lounges_path' for #<#<Class:0x0000000360dd28>:0x0000000360b848>):
+    60: <%= link_to 'Back', reservations_path %>
+    61: <% else %>
+    62:  <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+    63:  <%= link_to 'Confirm', lounges_path %>
+    64: <% end %>
+    65: </div>
+    66: </div>
+  app/views/reservations/show.html.erb:63:in `_app_views_reservations_show_html_erb___1677843340381626033_28332180__2442818949034711319'
+  app/controllers/reservations_controller.rb:19:in `show'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.9ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.0ms)

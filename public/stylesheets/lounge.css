@@ -218,3 +218,12 @@ height:140px;
   margin-right:3px;
 }
 
+#sklabel{
+ font-size:0.7em;
+ float:right;
+}
+
+#sklabel label{
+ margin-right:15px;
+}
+

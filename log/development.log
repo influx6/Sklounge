@@ -22448,3 +22448,137 @@ Started GET "/" for 127.0.0.1 at 2010-10-21 00:07:11 +0100
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
 Rendered lounges/index.html.erb within layouts/application (177.9ms)
 Completed 200 OK in 355ms (Views: 299.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:37:02 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (111.3ms)
+Completed 200 OK in 126ms (Views: 114.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:37:29 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (185.5ms)
+Completed 200 OK in 200ms (Views: 188.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:37:37 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (112.7ms)
+Completed 200 OK in 128ms (Views: 116.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:37:54 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (112.8ms)
+Completed 200 OK in 128ms (Views: 115.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:38:05 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (110.1ms)
+Completed 200 OK in 124ms (Views: 113.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:40:53 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (110.5ms)
+Completed 200 OK in 124ms (Views: 113.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:41:09 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (117.2ms)
+Completed 200 OK in 132ms (Views: 120.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:42:12 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (118.4ms)
+Completed 200 OK in 133ms (Views: 121.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:42:24 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (116.5ms)
+Completed 200 OK in 131ms (Views: 119.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:42:48 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (119.1ms)
+Completed 200 OK in 135ms (Views: 122.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:42:57 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (114.3ms)
+Completed 200 OK in 129ms (Views: 117.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:43:06 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 133ms (Views: 121.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:43:14 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (110.6ms)
+Completed 200 OK in 125ms (Views: 113.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:43:34 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 129ms (Views: 117.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:43:43 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (112.2ms)
+Completed 200 OK in 127ms (Views: 115.2ms | ActiveRecord: 0.9ms)

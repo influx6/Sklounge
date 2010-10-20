@@ -16,9 +16,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: sklounge-production
-  username: 'root'
-  password: 'master'
+  adapter: mysql
+  database: sklounge_production
+  username: sklounge
+  password: 12Ee3r
+  pool: 5
   timeout: 5000
 

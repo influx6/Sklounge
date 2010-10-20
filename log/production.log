@@ -467,3 +467,794 @@ ActionController::RoutingError (No route matches "/favicon.ico"):
   
 
 Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:07:17 +0100
+  Processing by LoungesController#index as HTML
+Completed   in 4ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0):
+  app/controllers/lounges_controller.rb:15:in `show_Bulletin'
+  app/controllers/lounges_controller.rb:5:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (89.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:12:37 +0100
+  Processing by LoungesController#index as HTML
+Completed   in 1ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0):
+  app/controllers/lounges_controller.rb:15:in `show_Bulletin'
+  app/controllers/lounges_controller.rb:5:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:12:41 +0100
+  Processing by LoungesController#index as HTML
+Completed   in 2ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0):
+  app/controllers/lounges_controller.rb:15:in `show_Bulletin'
+  app/controllers/lounges_controller.rb:5:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:12:42 +0100
+  Processing by LoungesController#index as HTML
+Completed   in 1ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0):
+  app/controllers/lounges_controller.rb:15:in `show_Bulletin'
+  app/controllers/lounges_controller.rb:5:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:12:56 +0100
+  Processing by LoungesController#index as HTML
+Completed   in 1ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0):
+  app/controllers/lounges_controller.rb:15:in `show_Bulletin'
+  app/controllers/lounges_controller.rb:5:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:12:57 +0100
+  Processing by LoungesController#index as HTML
+Completed   in 2ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0):
+  app/controllers/lounges_controller.rb:15:in `show_Bulletin'
+  app/controllers/lounges_controller.rb:5:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:12:58 +0100
+  Processing by LoungesController#index as HTML
+Completed   in 1ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: bulletins: SELECT     "bulletins".* FROM       "bulletins"  ORDER BY   id DESC LIMIT 5 OFFSET 0):
+  app/controllers/lounges_controller.rb:15:in `show_Bulletin'
+  app/controllers/lounges_controller.rb:5:in `index'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:13:22 +0100
+  Processing by LoungesController#index as HTML
+Rendered lounges/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/stylesheets/about.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:22 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/about.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/definition.css?1287593063" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/definition.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/lounge.css?1287598954" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/lounge.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/ie.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/ie.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/bulletin.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/bulletin.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/login.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/login.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/main.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stylesheets/reservation.css?1287404383" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/reservation.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/prettyPhoto.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/prettyPhoto.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/root.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/root.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/rails.js?1286363152" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/jquery.cycle.js?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.cycle.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/jquery.prettyPhoto.js?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.prettyPhoto.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/main.js?1286907652" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/main.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/event.css?1287403226" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/event.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/gallery.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/gallery.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/jquery.js?1286342566" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/jquery-ui.js?1286451930" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery-ui.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/bulb-nactive10.png?1286894616" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/images/bulb-nactive10.png"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/images/lounges1.png" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/images/lounges1.png"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/td2.jpg" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/images/td2.jpg"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/td3.jpg" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/images/td3.jpg"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/td.png" for 127.0.0.1 at 2010-10-21 00:13:23 +0100
+
+ActionController::RoutingError (No route matches "/images/td.png"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-21 00:13:25 +0100
+  Processing by ReservationsController#new as HTML
+Rendered reservations/_form.html.erb (56.5ms)
+Rendered reservations/new.html.erb within layouts/application (81.5ms)
+Completed 200 OK in 102ms (Views: 100.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stylesheets/about.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:25 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/about.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/bulletin.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/bulletin.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/gallery.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/gallery.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/ie.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/ie.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/stylesheets/definition.css?1287593063" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/definition.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/event.css?1287403226" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/event.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/login.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/login.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/stylesheets/lounge.css?1287598954" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/lounge.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/main.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/prettyPhoto.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/prettyPhoto.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/root.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/root.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/reservation.css?1287404383" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/reservation.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (59.8ms)
+
+
+Started GET "/javascripts/jquery-ui.js?1286451930" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery-ui.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/jquery.js?1286342566" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/rails.js?1286363152" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/jquery.cycle.js?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.cycle.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/jquery.prettyPhoto.js?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.prettyPhoto.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/main.js?1286907652" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/main.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/bulb-nactive10.png?1286894616" for 127.0.0.1 at 2010-10-21 00:13:26 +0100
+
+ActionController::RoutingError (No route matches "/images/bulb-nactive10.png"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 00:13:39 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NMpd0aHVqpa7+kPyM2VkolKkxst95ZQxrTzGaM6vk1U=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"4", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"20", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+Rendered notifier/reservation_confirmation.html.erb (1.0ms)
+
+Sent mail to dfgdgd@sd.com (6834ms)
+Redirected to http://localhost:3000/reservations/1
+Completed 302 Found in 7348ms
+
+
+Started GET "/reservations/1" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered reservations/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/stylesheets/about.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/about.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/gallery.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/gallery.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/event.css?1287403226" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/event.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/stylesheets/definition.css?1287593063" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/definition.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/ie.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/ie.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/stylesheets/bulletin.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/bulletin.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/login.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/login.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/lounge.css?1287598954" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/lounge.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/main.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/reservation.css?1287404383" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/reservation.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/prettyPhoto.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:46 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/prettyPhoto.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (73.6ms)
+
+
+Started GET "/stylesheets/root.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:47 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/root.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/javascripts/rails.js?1286363152" for 127.0.0.1 at 2010-10-21 00:13:47 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/jquery-ui.js?1286451930" for 127.0.0.1 at 2010-10-21 00:13:47 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery-ui.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/jquery.js?1286342566" for 127.0.0.1 at 2010-10-21 00:13:47 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/javascripts/jquery.cycle.js?1286894616" for 127.0.0.1 at 2010-10-21 00:13:47 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.cycle.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/javascripts/jquery.prettyPhoto.js?1286894616" for 127.0.0.1 at 2010-10-21 00:13:47 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.prettyPhoto.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/main.js?1286907652" for 127.0.0.1 at 2010-10-21 00:13:47 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/main.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+  Processing by LoungesController#index as HTML
+Rendered lounges/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stylesheets/about.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/about.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/stylesheets/bulletin.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/bulletin.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/event.css?1287403226" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/event.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/definition.css?1287593063" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/definition.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/gallery.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/gallery.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.9ms)
+
+
+Started GET "/stylesheets/ie.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/ie.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/login.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/login.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/stylesheets/lounge.css?1287598954" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/lounge.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/main.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/prettyPhoto.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/prettyPhoto.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/stylesheets/reservation.css?1287404383" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/reservation.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/root.css?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/stylesheets/root.css"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/rails.js?1286363152" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/javascripts/jquery-ui.js?1286451930" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery-ui.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/javascripts/jquery.js?1286342566" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/javascripts/jquery.cycle.js?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.cycle.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/javascripts/jquery.prettyPhoto.js?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.prettyPhoto.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/javascripts/main.js?1286907652" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/main.js"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/lounges1.png" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/images/lounges1.png"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/images/td2.jpg" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/images/td2.jpg"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/bulb-nactive10.png?1286894616" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/images/bulb-nactive10.png"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/images/td3.jpg" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/images/td3.jpg"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/td.png" for 127.0.0.1 at 2010-10-21 00:13:56 +0100
+
+ActionController::RoutingError (No route matches "/images/td.png"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)

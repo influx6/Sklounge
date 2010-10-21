@@ -22645,3 +22645,34 @@ Started GET "/" for 127.0.0.1 at 2010-10-21 01:00:40 +0100
   [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
 Rendered lounges/index.html.erb within layouts/application (55.5ms)
 Completed 200 OK in 70ms (Views: 58.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2010-10-21 01:01:36 +0100
+  Processing by UserSessionsController#destroy as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://localhost:8080/
+Completed 302 Found in 114ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 01:01:36 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 52ms (Views: 40.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-21 01:01:50 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+Rendered galleries/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 134ms (Views: 118.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 01:01:55 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+Rendered lounges/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 111ms (Views: 101.0ms | ActiveRecord: 0.4ms)

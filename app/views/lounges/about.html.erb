@@ -7,7 +7,9 @@
  <br/>
  <div id='about_desc'>
  <p>
-  <%= @static.about_desc %>
+  <% unless @static == nil %>
+   <%= @static.about_desc %>
+  <% end %>
  </p>
  </div>
 

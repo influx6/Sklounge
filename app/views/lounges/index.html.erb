@@ -42,7 +42,9 @@
  <div id='showoff_desc'>
   <h2> Show Off Desciption!</h2>
   <p>
-  <%= @static.show_desc %>
+    <% unless @static == nil %>
+   <%= @static.show_desc %>
+  <% end %>
   </p>
  </div>
  </div>

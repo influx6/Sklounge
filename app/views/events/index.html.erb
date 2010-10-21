@@ -28,7 +28,7 @@
   <div id='latest_event' >
     <div id='latest_list' class='sidcurve shadow'>
       <div id='latest_top'>
-        <h3>Latest Events on <%= Event.month_list[Event.current_month] %>, <%= Event.current_year %> </h3>
+        <h3>Latest Events for <%= Event.month_list[Event.current_month] %>, <%= Event.current_year %> </h3>
       </div>
       <div id='latest_bottom'>
        <% @events.each do |e| %>
@@ -42,6 +42,7 @@
             <% end %>
             <% if current_user %>
             <label><a href=""><img src="/images/s.png" /></a>
+
             <a href=""><img src="/images/x.png" /></a></label>
             <% end %>
             </p>
@@ -76,8 +77,9 @@
             <%= e.event_start_time %> - <%= e.event_end_time %>
             <% end %>
             <% if current_user %>
-            <label><a href=""><img src="/images/s.png" /></a>
-            <a href=""><img src="/images/x.png" /></a></label>
+            <label>
+            <%= link_to image_tag("/images/s.png"), event_path(e) %>
+            <%= link_to image_tag("/images/x.png"), e, :confirm => 'Are You Sure' %>
             <% end %>
             </p>
             <p>

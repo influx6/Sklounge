@@ -18,7 +18,7 @@
 <br/>
 <p>
   <%= link_to "Edit", edit_static_path(@static) %> |
-  <%= link_to "Destroy", @static, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Destroy", delete_static_url(@static) %> |
   <%= link_to "Back", statics_path %>
 </p>
 </div>

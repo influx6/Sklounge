@@ -26,7 +26,7 @@
 <br/>
 
 <div id='display_link'>
-<%= link_to 'Edit', edit_bulletin_path(@bulletin) %> |
+<%= link_to 'Edit', edit_bulletin_path(@bulletin) %> |<%= link_to "Destroy", delete_bulletin_url(@bulletin) %>|
 <%= link_to 'Back', bulletins_path %>
 
 </div>

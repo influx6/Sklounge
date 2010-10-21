@@ -57,6 +57,8 @@
 <div id='display_link'>
 <% if current_user %>
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to "Destroy", delete_reservation_url(@reservation) %>
+|
 <%= link_to 'Back', reservations_path %>
 <% else %>
  <%= link_to 'Edit', edit_reservation_path(@reservation) %> |

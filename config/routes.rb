@@ -31,8 +31,8 @@ Sklounge::Application.routes.draw do
  match 'bulletins/delete/:id'=> 'bulletins#destroy',:as => :delete_bulletin
  match 'users/delete/:id'=> 'users#destroy',:as => :delete_user
   match 'gallery/delete/:id'=> 'galleries#destroy',:as => :delete_gallery
-
-
+  match 'event/delete/:id'=> 'events#destroy',:as => :delete_event
+match 'static/delete/:id'=> 'statics#destroy',:as => :delete_static
 
 
 

@@ -27,8 +27,8 @@
 </p>
 <br/>
 <p>
-  <%= link_to "Edit", edit_event_path(@gallery) %> |
-  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Edit", edit_event_path(@event) %> |
+  <%= link_to "Destroy", delete_event_url(@event) %> |
   <%= link_to "Back", events_path %>
 </p>
 </div>

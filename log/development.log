@@ -26162,3 +26162,678 @@ Started GET "/events" for 127.0.0.1 at 2010-10-21 15:07:13 +0100
   [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
 Rendered events/index.html.erb within layouts/application (135.9ms)
 Completed 200 OK in 152ms (Views: 139.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:14:27 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (148.5ms)
+Completed 200 OK in 166ms (Views: 151.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:21:31 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (149.0ms)
+Completed 200 OK in 165ms (Views: 152.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:21:53 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (75.7ms)
+Completed 200 OK in 168ms (Views: 153.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:22:42 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (139.8ms)
+Completed 200 OK in 156ms (Views: 142.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:27:59 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (169.2ms)
+Completed 200 OK in 185ms (Views: 172.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:28:13 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (135.1ms)
+Completed 200 OK in 150ms (Views: 138.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2010-10-21 15:28:16 +0100
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/show.html.erb within layouts/application (129.8ms)
+Completed 200 OK in 149ms (Views: 132.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:28:19 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (135.2ms)
+Completed 200 OK in 150ms (Views: 136.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2010-10-21 15:28:23 +0100
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/show.html.erb within layouts/application (135.7ms)
+Completed 200 OK in 159ms (Views: 139.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:28:26 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/index.html.erb within layouts/application (136.2ms)
+Completed 200 OK in 152ms (Views: 138.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:34:56 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (139.6ms)
+Completed 200 OK in 155ms (Views: 140.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2010-10-21 15:34:59 +0100
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events"."id" = 1) LIMIT 1[0m
+Rendered events/show.html.erb within layouts/application (29.7ms)
+Completed   in 119ms
+
+ActionView::Template::Error (undefined method `stringify_keys' for "http://localhost:8080/event/delete/1":String):
+    28: <br/>
+    29: <p>
+    30:   <%= link_to "Edit", edit_event_path(@gallery) %> |
+    31:   <%= link_to "Destroy", @event, delete_event_url %> |
+    32:   <%= link_to "Back", events_path %>
+    33: </p>
+    34: </div>
+  app/views/events/show.html.erb:31:in `_app_views_events_show_html_erb__3468521063296355137_32781640__3674194041178201759'
+  app/controllers/events_controller.rb:18:in `show'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2010-10-21 15:35:18 +0100
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."id" = 1) LIMIT 1
+Rendered events/show.html.erb within layouts/application (9.6ms)
+Completed   in 28ms
+
+ActionView::Template::Error (undefined method `stringify_keys' for "http://localhost:8080/event/delete/1":String):
+    28: <br/>
+    29: <p>
+    30:   <%= link_to "Edit", edit_event_path(@event) %> |
+    31:   <%= link_to "Destroy", @event, delete_event_url %> |
+    32:   <%= link_to "Back", events_path %>
+    33: </p>
+    34: </div>
+  app/views/events/show.html.erb:31:in `_app_views_events_show_html_erb__3468521063296355137_31315780__3674194041178201759'
+  app/controllers/events_controller.rb:18:in `show'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.1ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2010-10-21 15:36:08 +0100
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered events/show.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 84ms (Views: 67.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/event/delete/1" for 127.0.0.1 at 2010-10-21 15:36:11 +0100
+  Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "events" WHERE ("events"."id" = 1)[0m
+Redirected to http://localhost:8080/events
+Completed 302 Found in 193ms
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 15:36:11 +0100
+  Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 149ms (Views: 67.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-21 15:36:46 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mBulletin Load (0.2ms)[0m  [1mSELECT "bulletins".* FROM "bulletins"[0m
+Rendered bulletins/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 156ms (Views: 32.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bulletins/new" for 127.0.0.1 at 2010-10-21 15:37:10 +0100
+  Processing by BulletinsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_bulletins__form_html_erb__1933942213405714071_35377620_17425293366008933 at /home/monster/Documents/Rails/sklounge/app/views/bulletins/_form.html.erb:2)
+Rendered bulletins/_form.html.erb (9.3ms)
+Rendered bulletins/new.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 182ms (Views: 61.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bulletins" for 127.0.0.1 at 2010-10-21 15:37:19 +0100
+  Processing by BulletinsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "bulletin"=>{"title"=>"Total Party", "message"=>"total"}, "commit"=>"Create Bulletin"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "bulletins" ("created_at", "message", "title", "updated_at") VALUES ('2010-10-21 14:37:19.413167', 'total', 'Total Party', '2010-10-21 14:37:19.413167')
+Redirected to http://localhost:8080/bulletins/1
+Completed 302 Found in 262ms
+
+
+Started GET "/bulletins/1" for 127.0.0.1 at 2010-10-21 15:37:19 +0100
+  Processing by BulletinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mBulletin Load (0.2ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" WHERE ("bulletins"."id" = 1) LIMIT 1[0m
+Rendered bulletins/show.html.erb within layouts/application (79.7ms)
+Completed 200 OK in 141ms (Views: 83.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-21 15:37:25 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins"
+Rendered bulletins/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 139ms (Views: 18.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bulletins/1" for 127.0.0.1 at 2010-10-21 15:37:28 +0100
+  Processing by BulletinsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mBulletin Load (0.2ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" WHERE ("bulletins"."id" = 1) LIMIT 1[0m
+Rendered bulletins/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 140ms (Views: 16.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bulletins/delete/1" for 127.0.0.1 at 2010-10-21 15:37:31 +0100
+  Processing by BulletinsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins" WHERE ("bulletins"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "bulletins" WHERE ("bulletins"."id" = 1)[0m
+Redirected to http://localhost:8080/bulletins
+Completed 302 Found in 249ms
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-21 15:37:31 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mBulletin Load (0.2ms)[0m  SELECT "bulletins".* FROM "bulletins"
+Rendered bulletins/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 65ms (Views: 9.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/bulletins" for 127.0.0.1 at 2010-10-21 15:38:09 +0100
+  Processing by BulletinsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mBulletin Load (0.2ms)[0m  [1mSELECT "bulletins".* FROM "bulletins"[0m
+Rendered bulletins/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 136ms (Views: 10.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-21 15:38:10 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.4ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered galleries/index.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 76ms (Views: 60.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/galleries/new" for 127.0.0.1 at 2010-10-21 15:38:13 +0100
+  Processing by GalleriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_galleries__form_html_erb__394191102260338571_31488760_17425293366008933 at /home/monster/Documents/Rails/sklounge/app/views/galleries/_form.html.erb:1)
+Rendered galleries/_form.html.erb (11.8ms)
+Rendered galleries/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 118ms (Views: 52.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/galleries" for 127.0.0.1 at 2010-10-21 15:38:27 +0100
+  Processing by GalleriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "gallery"=>{"title"=>"the", "description"=>"desc", "gallery_type"=>"Events", "photo"=>#<File:/tmp/RackMultipart20101021-11207-1wzdlr8>}, "commit"=>"Create Gallery"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+[paperclip] identify -format %wx%h '/tmp/stream20101021-11207-7a6656.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101021-11207-7a6656.png[0]' -resize "640x400>" '/tmp/stream20101021-11207-7a665620101021-11207-1qsn9vu' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20101021-11207-7a665620101021-11207-1qsn9vu[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101021-11207-7a665620101021-11207-1qsn9vu[0]' -resize "300x250>" '/tmp/stream20101021-11207-7a665620101021-11207-1qsn9vu20101021-11207-9lmihg' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20101021-11207-7a665620101021-11207-1qsn9vu[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101021-11207-7a665620101021-11207-1qsn9vu[0]' -resize "150x150" '/tmp/stream20101021-11207-7a665620101021-11207-1qsn9vu20101021-11207-39qlrs' 2>/dev/null
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "galleries" ("created_at", "description", "gallery_type", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "title", "updated_at") VALUES ('2010-10-21 14:38:28.198980', 'desc', 'Events', 'image/png', 'b&w.png', 58639, '2010-10-21 14:38:27.337986', 'the', '2010-10-21 14:38:28.198980')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/original/b&w.png
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/small/b&w.png
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/thumb/b&w.png
+Redirected to http://localhost:8080/galleries/1
+Completed 302 Found in 1296ms
+
+
+Started GET "/galleries/1" for 127.0.0.1 at 2010-10-21 15:38:28 +0100
+  Processing by GalleriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mGallery Load (0.2ms)[0m  SELECT "galleries".* FROM "galleries" WHERE ("galleries"."id" = 1) LIMIT 1
+Rendered galleries/show.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 165ms (Views: 24.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-21 15:38:34 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.5ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (139.3ms)
+Completed 200 OK in 158ms (Views: 142.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/galleries/1" for 127.0.0.1 at 2010-10-21 15:38:37 +0100
+  Processing by GalleriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mGallery Load (4.1ms)[0m  SELECT "galleries".* FROM "galleries" WHERE ("galleries"."id" = 1) LIMIT 1
+Rendered galleries/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 157ms (Views: 24.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/gallery/delete/1" for 127.0.0.1 at 2010-10-21 15:38:39 +0100
+  Processing by GalleriesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mGallery Load (0.2ms)[0m  [1mSELECT "galleries".* FROM "galleries" WHERE ("galleries"."id" = 1) LIMIT 1[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/original/b&w.png
+[paperclip] deleting /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/small/b&w.png
+[paperclip] deleting /home/monster/Documents/Rails/sklounge/public/assets/gallery/1/thumb/b&w.png
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "galleries" WHERE ("galleries"."id" = 1)
+Redirected to http://localhost:8080/galleries
+Completed 302 Found in 261ms
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-21 15:38:39 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.5ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (133.1ms)
+Completed 200 OK in 151ms (Views: 136.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2010-10-21 15:39:23 +0100
+  Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mReservation Load (0.2ms)[0m  SELECT "reservations".* FROM "reservations"
+Rendered reservations/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 86ms (Views: 28.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-21 15:39:26 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__472659252426328478_33467340_17425293366008933 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (17.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/new.html.erb within layouts/application (163.6ms)
+Completed 200 OK in 202ms (Views: 184.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 15:39:33 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "reservation"=>{"first_name"=>"alex", "last_name"=>"ddddgf", "email"=>"dfgdgd@sd.com", "phone_number"=>"6465444645", "number_of_guest"=>"2", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 14:39:33.320345', 'dfgdgd@sd.com', '', 'alex', 'ddddgf', '2', 6465444645, '2010-10-21', '7pm', 'Yes', '2010-10-21 14:39:33.320345')[0m
+Rendered notifier/reservation_confirmation.html.erb (1.2ms)
+
+Sent mail to dfgdgd@sd.com (6290ms)
+Date: Thu, 21 Oct 2010 15:39:34 +0100
+From: sklounge@gmail.com
+To: dfgdgd@sd.com
+Message-ID: <4cc050a67bf55_2bc791fed84258c@monster-laptop.mail>
+Subject: SKlounge:: Thank you Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #333;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  1
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  alex ddddgf
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  dfgdgd@sd.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  6465444645
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  2
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-21
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+Redirected to http://localhost:8080/reservations/1
+Completed 302 Found in 7336ms
+
+
+Started GET "/reservations/1" for 127.0.0.1 at 2010-10-21 15:39:40 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReservation Load (0.2ms)[0m  SELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/show.html.erb within layouts/application (142.1ms)
+Completed 200 OK in 165ms (Views: 145.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservation/delete/1" for 127.0.0.1 at 2010-10-21 15:39:53 +0100
+  Processing by ReservationsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mReservation Load (0.3ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "reservations" WHERE ("reservations"."id" = 1)
+Redirected to http://localhost:8080/reservations
+Completed 302 Found in 276ms
+
+
+Started GET "/reservations" for 127.0.0.1 at 2010-10-21 15:39:53 +0100
+  Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mReservation Load (0.2ms)[0m  [1mSELECT "reservations".* FROM "reservations"[0m
+Rendered reservations/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 70ms (Views: 10.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-21 15:40:23 +0100
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics"[0m
+Rendered users/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 70ms (Views: 11.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/statics/new" for 127.0.0.1 at 2010-10-21 15:40:32 +0100
+  Processing by StaticsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered statics/_form.html.erb (7.6ms)
+Rendered statics/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 159ms (Views: 18.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/statics" for 127.0.0.1 at 2010-10-21 15:40:36 +0100
+  Processing by StaticsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "static"=>{"show_desc"=>"bb", "about_desc"=>"bbbb", "static_active"=>"Yes"}, "commit"=>"Create Static"}
+  [1m[35mUser Load (4.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "statics" ("about_desc", "created_at", "show_desc", "static_active", "updated_at") VALUES ('bbbb', '2010-10-21 14:40:37.072931', 'bb', 'Yes', '2010-10-21 14:40:37.072931')
+Redirected to http://localhost:8080/statics/1
+Completed 302 Found in 273ms
+
+
+Started GET "/statics/1" for 127.0.0.1 at 2010-10-21 15:40:37 +0100
+  Processing by StaticsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mStatic Load (0.4ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."id" = 1) LIMIT 1[0m
+Rendered statics/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 143ms (Views: 17.8ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/statics" for 127.0.0.1 at 2010-10-21 15:40:39 +0100
+  Processing by StaticsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:8080/users
+Completed 302 Found in 47ms
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-21 15:40:39 +0100
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (2.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics"[0m
+Rendered users/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 144ms (Views: 20.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/statics/1" for 127.0.0.1 at 2010-10-21 15:40:42 +0100
+  Processing by StaticsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."id" = 1) LIMIT 1
+Rendered statics/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 145ms (Views: 17.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/static/delete/1" for 127.0.0.1 at 2010-10-21 15:40:47 +0100
+  Processing by StaticsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mStatic Load (4.0ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "statics" WHERE ("statics"."id" = 1)
+Redirected to http://localhost:8080/statics
+Completed 302 Found in 246ms
+
+
+Started GET "/statics" for 127.0.0.1 at 2010-10-21 15:40:47 +0100
+  Processing by StaticsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://localhost:8080/users
+Completed 302 Found in 52ms
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-21 15:40:47 +0100
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics"
+Rendered users/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 147ms (Views: 11.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2010-10-21 15:41:51 +0100
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 157ms (Views: 10.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/delete/1" for 127.0.0.1 at 2010-10-21 15:41:53 +0100
+  Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "users" WHERE ("users"."id" = 1)[0m
+Redirected to http://localhost:8080/users
+Completed 302 Found in 183ms
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-21 15:41:54 +0100
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /home/monster/Documents/Rails/sklounge/app/controllers/application_controller.rb:41)
+Redirected to http://localhost:8080/
+Completed 302 Found in 106ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 15:41:54 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (135.4ms)
+Completed 200 OK in 179ms (Views: 138.8ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100911050834)
+Migrating to CreateBulletins (20100911050941)
+Migrating to CreateReservations (20100911051011)
+Migrating to CreateGalleries (20100911051028)
+Migrating to AddAttachmentPhotoToGallery (20100911052959)
+Migrating to CreateEvents (20101013195126)
+Migrating to CreateStatics (20101021011018)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("bulletins")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("events")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("galleries")
+  [1m[36mSQL (1.8ms)[0m  [1mPRAGMA index_list("reservations")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("statics")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."login" = 'sklounge') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('sklounge@gmail.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('sklounge')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '18bc6cd9ff252850b5a15fab93244c6a2c3f41b213534455932ec51ab4205575a53fd444780081ae2a8dca2f09572424efbf37bbf45aef1df949c4f74ad04fde') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "crypted_password", "email", "login", "password_salt", "persistence_token", "updated_at", "user_type") VALUES ('2010-10-21 14:42:23.489039', '5b294f4f3fbc1f00ca4011d53879f06b1e8048333433c278038391ccf2baf992081900cee092bb941819d9f07bfdd900ad4e9c5a7d307c94153a64ca02a55039', 'sklounge@gmail.com', 'sklounge', '4WPEytytPd7HS6XqtC8', '18bc6cd9ff252850b5a15fab93244c6a2c3f41b213534455932ec51ab4205575a53fd444780081ae2a8dca2f09572424efbf37bbf45aef1df949c4f74ad04fde', '2010-10-21 14:42:23.489039', NULL)

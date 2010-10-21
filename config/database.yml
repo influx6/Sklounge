@@ -19,7 +19,7 @@ production:
   adapter: mysql
   database: sklounge_production
   username: sklounge
-  password: 12Ee3r
+  password: sk2004
   pool: 5
   timeout: 5000
 

@@ -1,0 +1,25 @@
+<div id="display_form", class = "curved">
+<br/>
+
+<p id='static_message'>
+  <b >ShowOff description:</b>
+  <%= @static.show_desc %>
+</p>
+<br/>
+<p id='static_message'>
+  <b>About Description:</b>
+  <%= @static.about_desc %>
+</p>
+<br/>
+<p id='static_message'>
+  <b>Currently In Use:</b>
+  <%= @static.static_active %>
+</p>
+<br/>
+<p>
+  <%= link_to "Edit", edit_static_path(@static) %> |
+  <%= link_to "Destroy", @static, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Back", statics_path %>
+</p>
+</div>
+

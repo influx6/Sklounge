@@ -1,0 +1,33 @@
+<%= form_for(@static) do |f| %>
+  <% if @static.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@static.errors.count, "error") %> prohibited this static from being saved:</h2>
+
+      <ul>
+      <% @static.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label>ShowOff Content</lebel><br />
+    <%= f.text_area :show_desc %>
+  </div>
+  <br/>
+  <div class="field">
+    <label>About Content</lebel><br />
+    <%= f.text_area :about_desc %>
+  </div>
+  <br/>
+   <div class="field">
+    <label>Make Active Content</lebel><br />
+    <%= f.select :static_active, [['Yes'],['No']] %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

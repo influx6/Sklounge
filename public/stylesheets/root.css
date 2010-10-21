@@ -44,7 +44,7 @@ float:left;
 margin-left:26px;
 padding:5px;
 border:1px solid #333;
-background: 
+background:
 }
 
 #detaillist ul li h3{
@@ -91,3 +91,9 @@ left:10px;
 .actionlink li a{
 margin-left:10px;
 }
+
+#static_message{
+       width:300px;
+       word-wrap:break-word;
+}
+

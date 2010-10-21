@@ -2,7 +2,8 @@ class UsersController < ApplicationController
  before_filter :require_user, :only => [:index,:new, :create,:show, :edit, :update,:destroy]
 
   def index
-   @users = User.find :all
+   @users = User.all
+   @static = Static.all
   end
 
   def new

@@ -1,5 +1,13 @@
 Sklounge::Application.routes.draw do
 
+  resources :statics
+
+  get "statics/index"
+
+  get "statics/new"
+
+  get "statics/create"
+
   resources :events
 
   get 'lounges/about'

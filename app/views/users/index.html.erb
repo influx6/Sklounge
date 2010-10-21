@@ -44,8 +44,41 @@
      </div>
 
 </div>
+</div>
+
+<div style='margin-bottom:30px;'></div>
 
 
+<div id='static_details'>
+<div id='standard_index'>
+ <h2 style='margin-bottom:10px;'>Static Descriptions</h2>
+ <h5 class='pushleft'>Required For About Page and Index Page</h5>
 
+<div id='standard_file' >
+ <%if @static.empty? %>
+
+   <a href="/statics/new"><h1><span>Create Static Data</span></h1></a>
+        <% else %>
+  <% @static.each do |s| %>
+     <% if s.static_active == 'Yes' %>
+       <div id="repo_detail" class="curved_m">
+       <br/>
+        <label style='font-size:1.3em;'><b>Detail ID</b></label>:<%= s.id %><br/>
+        <label style='font-size:1.3em;'><b>Is Active:</b></label>:<%= s.static_active %>
+       </div>
+       <div id="standard_actions" class="curved_n">
+        <div id="show_action" class="curved_a">
+         <%= link_to "Show Details", static_path(s) %>
+        </div>
+        <div id="delete_action" class="curved_b">
+         <%= link_to "Delete", s, :method => :delete %>
+        </div>
+       </div>
+       <br/>
+         <% end %>
+         <% end %>
+       </div>
+<% end %>
+</div>
 </div>
 

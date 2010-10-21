@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101013195126) do
+ActiveRecord::Schema.define(:version => 20101021011018) do
 
   create_table "bulletins", :force => true do |t|
     t.string   "title"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(:version => 20101013195126) do
     t.string   "reservation_time"
     t.string   "table_reservation"
     t.string   "extra_msg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statics", :force => true do |t|
+    t.text     "show_desc"
+    t.text     "about_desc"
+    t.string   "static_active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

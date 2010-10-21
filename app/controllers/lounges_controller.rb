@@ -3,10 +3,11 @@ class LoungesController < ApplicationController
 
   def index
    @bulletins = show_Bulletin
-
+   @static = Static.find_active
   end
 
   def about
+    @static = Static.find_active
   end
 
   protected

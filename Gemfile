@@ -5,7 +5,8 @@ gem 'paperclip'
 gem 'will_paginate','3.0.pre2'
 #gem 'runner', '0.1.4', :git => 'git://github.com/stygeo/runner.git'
 gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
-gem 'spork'
+#gem 'spawn'
+#gem 'spawn', :git => 'git://github.com/tra/spawn.git'
 gem 'meta_search'
 
 group :development, :test do

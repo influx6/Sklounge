@@ -26837,3 +26837,327 @@ Migrating to CreateStatics (20101021011018)
   [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."login") = LOWER('sklounge')) LIMIT 1
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."persistence_token" = '18bc6cd9ff252850b5a15fab93244c6a2c3f41b213534455932ec51ab4205575a53fd444780081ae2a8dca2f09572424efbf37bbf45aef1df949c4f74ad04fde') LIMIT 1[0m
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "crypted_password", "email", "login", "password_salt", "persistence_token", "updated_at", "user_type") VALUES ('2010-10-21 14:42:23.489039', '5b294f4f3fbc1f00ca4011d53879f06b1e8048333433c278038391ccf2baf992081900cee092bb941819d9f07bfdd900ad4e9c5a7d307c94153a64ca02a55039', 'sklounge@gmail.com', 'sklounge', '4WPEytytPd7HS6XqtC8', '18bc6cd9ff252850b5a15fab93244c6a2c3f41b213534455932ec51ab4205575a53fd444780081ae2a8dca2f09572424efbf37bbf45aef1df949c4f74ad04fde', '2010-10-21 14:42:23.489039', NULL)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 19:01:16 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (46.8ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 275ms (Views: 113.9ms | ActiveRecord: 47.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 20:46:13 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.1ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (125.5ms)
+Completed 200 OK in 258ms (Views: 128.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-21 20:46:16 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__3686642611816216420_28032380__4111716918059177305 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (21.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/new.html.erb within layouts/application (150.1ms)
+Completed 200 OK in 200ms (Views: 183.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 20:46:34 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"3", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 19:46:34.946465', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '3', 8034802252, '2010-10-21', '7pm', 'Yes', '2010-10-21 19:46:34.946465')[0m
+Completed   in 291ms
+
+ArgumentError (wrong number of arguments):
+  app/controllers/reservations_controller.rb:50:in `spawn'
+  app/controllers/reservations_controller.rb:50:in `block in create'
+  app/controllers/reservations_controller.rb:48:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.9ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.4ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 21:12:03 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"3", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 20:12:03.603232', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '3', 8034802252, '2010-10-21', '7pm', 'Yes', '2010-10-21 20:12:03.603232')
+Completed   in 236ms
+
+ArgumentError (wrong number of arguments):
+  app/controllers/reservations_controller.rb:50:in `spawn'
+  app/controllers/reservations_controller.rb:50:in `block in create'
+  app/controllers/reservations_controller.rb:48:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.5ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.7ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-21 21:12:10 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__3686642611816216420_27437300__4111716918059177305 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (17.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/new.html.erb within layouts/application (127.7ms)
+Completed 200 OK in 151ms (Views: 132.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 21:12:28 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"4", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 20:12:28.974222', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '4', 8034802252, '2010-10-21', '7pm', 'Yes', '2010-10-21 20:12:28.974222')[0m
+Completed   in 202ms
+
+ArgumentError (wrong number of arguments):
+  app/controllers/reservations_controller.rb:50:in `spawn'
+  app/controllers/reservations_controller.rb:50:in `block in create'
+  app/controllers/reservations_controller.rb:48:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.3ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 21:13:12 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"4", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 20:13:12.542868', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '4', 8034802252, '2010-10-21', '7pm', 'Yes', '2010-10-21 20:13:12.542868')
+Completed   in 229ms
+
+ArgumentError (wrong number of arguments):
+  app/controllers/reservations_controller.rb:50:in `spawn'
+  app/controllers/reservations_controller.rb:50:in `block in create'
+  app/controllers/reservations_controller.rb:48:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.6ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 21:13:31 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"4", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 20:13:31.765903', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '4', 8034802252, '2010-10-21', '7pm', 'Yes', '2010-10-21 20:13:31.765903')[0m
+Completed   in 157ms
+
+ArgumentError (wrong number of arguments):
+  app/controllers/reservations_controller.rb:50:in `spawn'
+  app/controllers/reservations_controller.rb:50:in `block in create'
+  app/controllers/reservations_controller.rb:48:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (75.8ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (80.9ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 21:13:36 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SsWMulllY6TSTfVLNDIzNq43GQzjUxdvKfa/TShxabI=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"4", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 20:13:36.056548', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '4', 8034802252, '2010-10-21', '7pm', 'Yes', '2010-10-21 20:13:36.056548')
+Completed   in 192ms
+
+ArgumentError (wrong number of arguments):
+  app/controllers/reservations_controller.rb:50:in `spawn'
+  app/controllers/reservations_controller.rb:50:in `block in create'
+  app/controllers/reservations_controller.rb:48:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 21:44:11 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.1ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (4.8ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (144.5ms)
+Completed 200 OK in 375ms (Views: 180.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-21 21:45:04 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___1310588537040878237_43163340__3303875319555809945 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (46.4ms)
+DEPRECATION WARNING: RAILS_DEFAULT_LOGGER is deprecated. Please use ::Rails.logger. (called from search_for_record at /home/monster/.rvm/gems/ruby-1.9.2-p0/bundler/gems/authlogic-66ed79515919/lib/authlogic/session/scopes.rb:94)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/new.html.erb within layouts/application (174.2ms)
+Completed 200 OK in 305ms (Views: 194.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 21:45:33 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"89nEhhmcTegXrio9cjwVZj+EW/SUgmRvav46lWbGAGM=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"3", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 20:45:33.104908', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '3', 8034802252, '2010-10-21', '7pm', 'Yes', '2010-10-21 20:45:33.104908')[0m
+spawn> parent PID = 3325
+spawn> child PID = 3375
+Redirected to http://localhost:8080/reservations/8
+Completed 302 Found in 377ms
+
+
+Started GET "/reservations/8" for 127.0.0.1 at 2010-10-21 21:45:33 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mReservation Load (0.3ms)[0m  SELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 8) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered reservations/show.html.erb within layouts/application (147.5ms)
+Completed 200 OK in 215ms (Views: 191.1ms | ActiveRecord: 0.9ms)
+Rendered notifier/reservation_confirmation.html.erb (1.6ms)
+
+Sent mail to trinoxf@gmail.com (11986ms)
+Date: Thu, 21 Oct 2010 21:45:33 +0100
+From: sklounge@gmail.com
+To: trinoxf@gmail.com
+Message-ID: <4cc0a66dd4708_d2f1034ed05481b@monster-laptop.mail>
+Subject: SKlounge:: Thank you Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #333;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  8
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  Alexander Ewetumo
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  trinoxf@gmail.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  8034802252
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  3
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-21
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+spawn> child[3375] took 12.343026486 sec
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 21:45:57 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (102.1ms)
+Completed 200 OK in 144ms (Views: 106.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-21 21:46:07 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___1310588537040878237_39858540__3303875319555809945 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (17.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/new.html.erb within layouts/application (134.0ms)
+Completed 200 OK in 155ms (Views: 138.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 21:46:15 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (103.6ms)
+Completed 200 OK in 144ms (Views: 107.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-21 21:46:39 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/index.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 148ms (Views: 136.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-21 21:49:34 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___1310588537040878237_40526280__3303875319555809945 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (28.1ms)
+DEPRECATION WARNING: RAILS_DEFAULT_LOGGER is deprecated. Please use ::Rails.logger. (called from search_for_record at /home/monster/.rvm/gems/ruby-1.9.2-p0/bundler/gems/authlogic-66ed79515919/lib/authlogic/session/scopes.rb:94)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/new.html.erb within layouts/application (164.1ms)
+Completed 200 OK in 187ms (Views: 168.2ms | ActiveRecord: 0.9ms)

@@ -26,7 +26,7 @@ validates_uniqueness_of :event_name
  protected #----------------------
 
   def self.month_list
-    { 1 => 'January',2 => 'Feburary', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 10 => 'Novermber', 11 => 'October', 12 => 'December' }
+    { 1 => 'January',2 => 'Feburary', 3 => 'March', 4 => 'April', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'August', 9 => 'September', 11 => 'Novermber', 10 => 'October', 12 => 'December' }
   end
 
   def self.current_year

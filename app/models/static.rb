@@ -1,6 +1,7 @@
 class Static < ActiveRecord::Base
   attr_accessible :show_desc, :about_desc, :static_active
 
+validates_presence_of :show_desc, :about_desc, :static_active
 
 
 protected

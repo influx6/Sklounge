@@ -4,6 +4,7 @@ class LoungesController < ApplicationController
   def index
    @bulletins = show_Bulletin
    @static = Static.find_active
+   @events = Event.current_events
   end
 
   def about

@@ -1,6 +1,25 @@
-<h1>Editing static</h1>
+<h1>Edit Display Data</h1>
+<br/>
+<br/>
+<div id="reg_form", class = "curved">
+<%= render :partial => 'form' %>
+</div>
 
-<%= render 'form' %>
+<div id="form_back"  >
+<ul>
+<li>Back
+<ul>
+<li><%= link_to 'Home', root_path%></li>
+<li><%= link_to 'Make Reservation', new_reservation_path%></li>
+<li>  <%= link_to 'Gallery',galleries_path %></li>
+<li>
+<%= link_to 'Events',events_path %>
+</li>
+<li>
+<%= link_to 'About',lounges_about_path  %>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 
-<%= link_to 'Show', @static %> |
-<%= link_to 'Back', statics_path %>

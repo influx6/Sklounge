@@ -27171,3 +27171,286 @@ Started GET "/" for 127.0.0.1 at 2010-10-21 22:06:18 +0100
   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
 Rendered lounges/index.html.erb within layouts/application (106.9ms)
 Completed 200 OK in 151ms (Views: 110.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-21 22:47:34 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___1310588537040878237_41808000__3303875319555809945 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (16.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered reservations/new.html.erb within layouts/application (133.4ms)
+Completed 200 OK in 219ms (Views: 137.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-21 22:47:42 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"89nEhhmcTegXrio9cjwVZj+EW/SUgmRvav46lWbGAGM=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"4", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"21", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-21 21:47:42.933273', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '4', 8034802252, '2010-10-21', '7pm', 'Yes', '2010-10-21 21:47:42.933273')
+spawn> parent PID = 3633
+spawn> child PID = 7731
+Redirected to http://localhost:8080/reservations/9
+Completed 302 Found in 239ms
+
+
+Started GET "/reservations/9" for 127.0.0.1 at 2010-10-21 22:47:43 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mReservation Load (0.4ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 9) LIMIT 1[0m
+Rendered notifier/reservation_confirmation.html.erb (1.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/show.html.erb within layouts/application (150.7ms)
+Completed 200 OK in 180ms (Views: 155.8ms | ActiveRecord: 1.0ms)
+
+Sent mail to trinoxf@gmail.com (6905ms)
+Date: Thu, 21 Oct 2010 22:47:43 +0100
+From: sklounge@gmail.com
+To: trinoxf@gmail.com
+Message-ID: <4cc0b4ff54304_1e331034ed0369cf@monster-laptop.mail>
+Subject: SKlounge:: Thank you Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #000;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body>
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  9
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  Alexander Ewetumo
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  trinoxf@gmail.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  8034802252
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  4
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-21
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+
+spawn> child[7731] took 7.073208643 sec
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-21 22:47:52 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 146ms (Views: 49.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-22 09:06:36 +0100
+  Processing by LoungesController#index as HTML
+DEPRECATION WARNING: RAILS_DEFAULT_LOGGER is deprecated. Please use ::Rails.logger. (called from show_Bulletin at /home/monster/Documents/Rails/sklounge/app/controllers/lounges_controller.rb:17)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (1.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (195.5ms)
+Completed 200 OK in 581ms (Views: 230.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-22 09:06:40 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (109.2ms)
+Completed 200 OK in 176ms (Views: 124.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-22 09:06:46 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (105.5ms)
+Completed 200 OK in 149ms (Views: 109.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2010-10-22 09:06:49 +0100
+  Processing by UserSessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_user_sessions__form_html_erb___2577556522852487548_30411100_1758382252168931244 at /home/monster/Documents/Rails/sklounge/app/views/user_sessions/_form.html.erb:3)
+Rendered user_sessions/_form.html.erb (3.5ms)
+Rendered user_sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 199ms (Views: 100.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2010-10-22 09:06:53 +0100
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o+uUvA7Xc4+XuuTnGS2R70HEgXZ8wAa49y2B1PhUQkM=", "user_session"=>{"login"=>"sklounge", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'sklounge') LIMIT 1
+Redirected to http://localhost:8080/
+Completed 302 Found in 386ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-22 09:06:53 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 163ms (Views: 125.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-22 09:06:56 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.4ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered galleries/index.html.erb within layouts/application (116.7ms)
+Completed 200 OK in 136ms (Views: 120.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/galleries/new" for 127.0.0.1 at 2010-10-22 09:06:58 +0100
+  Processing by GalleriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_galleries__form_html_erb___2888827966109384682_27867240_1758382252168931244 at /home/monster/Documents/Rails/sklounge/app/views/galleries/_form.html.erb:1)
+Rendered galleries/_form.html.erb (11.2ms)
+Rendered galleries/new.html.erb within layouts/application (47.2ms)
+Completed 200 OK in 228ms (Views: 83.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/galleries" for 127.0.0.1 at 2010-10-22 09:07:12 +0100
+  Processing by GalleriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o+uUvA7Xc4+XuuTnGS2R70HEgXZ8wAa49y2B1PhUQkM=", "gallery"=>{"title"=>"A", "description"=>"ds", "gallery_type"=>"Events", "photo"=>#<File:/tmp/RackMultipart20101022-4993-bddsfa>}, "commit"=>"Create Gallery"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+[paperclip] identify -format %wx%h '/tmp/stream20101022-4993-12g3tj7.png[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101022-4993-12g3tj7.png[0]' -resize "640x400>" '/tmp/stream20101022-4993-12g3tj720101022-4993-qw4y80' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20101022-4993-12g3tj720101022-4993-qw4y80[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101022-4993-12g3tj720101022-4993-qw4y80[0]' -resize "300x250>" '/tmp/stream20101022-4993-12g3tj720101022-4993-qw4y8020101022-4993-1in4dyj' 2>/dev/null
+[paperclip] identify -format %wx%h '/tmp/stream20101022-4993-12g3tj720101022-4993-qw4y80[0]' 2>/dev/null
+[paperclip] convert '/tmp/stream20101022-4993-12g3tj720101022-4993-qw4y80[0]' -resize "150x150" '/tmp/stream20101022-4993-12g3tj720101022-4993-qw4y8020101022-4993-1f9dbki' 2>/dev/null
+  [1m[36mSQL (20.6ms)[0m  [1mINSERT INTO "galleries" ("created_at", "description", "gallery_type", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "title", "updated_at") VALUES ('2010-10-22 08:07:13.457214', 'ds', 'Events', 'image/png', 'b&w.png', 58639, '2010-10-22 08:07:12.621625', 'A', '2010-10-22 08:07:13.457214')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/2/original/b&w.png
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/2/small/b&w.png
+[paperclip] saving /home/monster/Documents/Rails/sklounge/public/assets/gallery/2/thumb/b&w.png
+Redirected to http://localhost:8080/galleries/2
+Completed 302 Found in 1333ms
+
+
+Started GET "/galleries/2" for 127.0.0.1 at 2010-10-22 09:07:13 +0100
+  Processing by GalleriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mGallery Load (0.2ms)[0m  SELECT "galleries".* FROM "galleries" WHERE ("galleries"."id" = 2) LIMIT 1
+Rendered galleries/show.html.erb within layouts/application (80.5ms)
+Completed 200 OK in 222ms (Views: 89.8ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-22 09:07:17 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.5ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (137.1ms)
+Completed 200 OK in 216ms (Views: 140.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-22 10:42:00 +0100
+  Processing by GalleriesController#index as HTML
+DEPRECATION WARNING: RAILS_DEFAULT_LOGGER is deprecated. Please use ::Rails.logger. (called from index at /home/monster/Documents/Rails/sklounge/app/controllers/galleries_controller.rb:4)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mGallery Load (0.1ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered galleries/index.html.erb within layouts/application (167.8ms)
+Completed 200 OK in 187ms (Views: 171.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-22 10:47:53 +0100
+  Processing by GalleriesController#index as */*
+  [1m[36mGallery Load (0.5ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendered galleries/index.html.erb within layouts/application (70.8ms)
+Completed 200 OK in 98ms (Views: 83.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/prettyPhoto/light_rounded/btnNext.png" for 127.0.0.1 at 2010-10-22 10:47:54 +0100
+
+ActionController::RoutingError (No route matches "/images/prettyPhoto/light_rounded/btnNext.png"):
+  
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.3ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-22 11:37:18 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered galleries/index.html.erb within layouts/application (128.8ms)
+Completed 200 OK in 147ms (Views: 132.3ms | ActiveRecord: 0.9ms)

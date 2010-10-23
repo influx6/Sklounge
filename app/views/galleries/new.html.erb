@@ -7,15 +7,16 @@
 
 <div id="form_back"  >
 <ul>
-<li><%= link_to 'Back Home', root_path%>
+<li>Back
 <ul>
+<li><%= link_to 'Home', root_path%></li>
 <li><%= link_to 'Make Reservation', new_reservation_path%></li>
 <li>  <%= link_to 'Gallery',galleries_path %></li>
 <li>
 <%= link_to 'Events',events_path %>
 </li>
 <li>
-<%= link_to 'About',lounges_about_path  %>
+<%= link_to 'Contact Us', new_contact_path   %>
 </li>
 </ul>
 </li>

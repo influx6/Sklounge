@@ -18,8 +18,8 @@
       <li>
      <%= link_to 'Events',events_path,:class => 'curved' %>
      </li>
-     <li>
-     <%= link_to 'About',lounges_about_path ,   :class => 'curved' %>
+        <li>
+     <%= link_to 'Contact',new_contact_path,:class => 'curved' %>
      </li>
      </ul>
    </div>
@@ -40,7 +40,7 @@
  </div>
  <div id='showoff_right'>
  <div id='showoff_desc'>
-  <h2> Show Off Desciption!</h2>
+  <h2> Welcome to SKLounge!</h2>
   <p>
     <% unless @static == nil %>
    <%= @static.show_desc %>

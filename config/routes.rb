@@ -1,21 +1,10 @@
 Sklounge::Application.routes.draw do
 
-  resources :statics
+  resources :contacts
 
-  get "statics/index"
-
-  get "statics/new"
-
-  get "statics/create"
-
-  resources :events
-
-  get 'lounges/about'
-  get 'reservations/index'
-
-
-  root :to => 'lounges#index'
-
+root :to => 'lounges#index'
+   resources :events
+   resources :statics
   resources :bulletins
   resources :users
   resources :galleries
@@ -24,8 +13,20 @@ Sklounge::Application.routes.draw do
 
 
 
-  match 'login' => 'user_sessions#new', :as => :login
-  match 'logout'=>'user_sessions#destroy',:as => :logout
+  get "statics/index"
+
+  get "statics/new"
+
+  get "statics/create"
+
+  get 'reservations/index'
+
+
+
+
+
+match 'login' => 'user_sessions#new', :as => :login
+match 'logout'=>'user_sessions#destroy',:as => :logout
 
  match 'reservation/delete/:id'=> 'reservations#destroy',:as => :delete_reservation
  match 'bulletins/delete/:id'=> 'bulletins#destroy',:as => :delete_bulletin
@@ -33,6 +34,7 @@ Sklounge::Application.routes.draw do
   match 'gallery/delete/:id'=> 'galleries#destroy',:as => :delete_gallery
   match 'event/delete/:id'=> 'events#destroy',:as => :delete_event
 match 'static/delete/:id'=> 'statics#destroy',:as => :delete_static
+match 'contact/delete/:id'=> 'contacts#destroy',:as => :delete_contact
 
 
 

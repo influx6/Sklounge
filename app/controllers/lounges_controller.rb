@@ -7,9 +7,7 @@ class LoungesController < ApplicationController
    @events = Event.current_events
   end
 
-  def about
-    @static = Static.find_active
-  end
+
 
   protected
 

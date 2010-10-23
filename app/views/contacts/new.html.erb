@@ -1,8 +1,14 @@
-<title>"New User" </title>
 <br/>
-<h2 class='htwo'>Edit Admin Detail </h2>
+<h1 class='htwo'><span>Contact</span> Us </h1>
 <br/>
-
+<div id='contact_support'>
+<h3>Understanding You</h3>
+<p id='contact_desc'>
+<% unless @static == nil %>
+   <%= @static.contact_desc %>
+  <% end %></p>
+</div>
+<br/><br/>
 
 <div id="reg_form", class = "curved">
 <%= render :partial => 'form' %>

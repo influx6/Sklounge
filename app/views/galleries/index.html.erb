@@ -4,9 +4,10 @@
 <div id='other_link' class='curved'>
 <ul>
 <li><%= link_to "User:Reservation ", reservations_path %></li>|
-<li><%= link_to "User:Gallery ", galleries_path, :class=>'linkactive' %></li>|
-<li><%= link_to "User:Bulletin ", bulletins_path %></li>|
-<li><%= link_to "User:Events ", events_path%></li>
+<li><%= link_to "User:Gallery", galleries_path, :class=>'linkactive' %></li>|
+<li><%= link_to "User:Bulletin", bulletins_path %></li>|
+<li><%= link_to "User:Events ", events_path%></li>|
+<li><%= link_to "User:Contacts", contacts_path %></li>
 </ul>
 </div>
 
@@ -104,8 +105,8 @@
 <li>
 <%= link_to 'Events',events_path %>
 </li>
-<li>
-<%= link_to 'About',lounges_about_path  %>
+<li>lounges_about
+<%= link_to 'Contact Us',new_contact_path  %>
 </li>
 </ul>
 </li>

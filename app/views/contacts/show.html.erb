@@ -1,0 +1,28 @@
+<h1 class='htwo'>Contact Detail</h1>
+<div id="display_form", class = "curved">
+
+<p>
+  <b>Full name:</b>
+  <%= @contact.full_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @contact.subject %>
+</p>
+
+<p id='static_message'>
+  <b>Message:</b>
+  <%= @contact.message %>
+</p>
+
+
+<%= link_to 'Destroy', delete_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
+</div>
+

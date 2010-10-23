@@ -4,7 +4,7 @@ class Notifier < ActionMailer::Base
 
   def reservation_confirmation(user)
     @reservation = user
-    mail(:to => user.email , :subject => 'SKlounge:: Thank you Reservating With Us')
+    mail(:to => user.email , :subject => 'SKlounge:: Thank you for Reservating With Us')
   end
 
 end

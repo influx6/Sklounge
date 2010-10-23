@@ -1,23 +1,24 @@
-#about_top{
-position:relative; 
-top:30px;
+#contact_support{
+position:relative;
 margin-left:30px;
 }
 
-#about_top h3{
-font-family: sans-serif;
+#contact_support h3{
 margin-left:5px;
-font-size:0.8em;
 text-shadow:1px 1px 2px #000;
 }
 
-#about_desc{
+#contact_desc{
  font-family: sans-serif;
  font-style:italic;
  text-shadow:1px 1px 2px #000;
  position:relative;
- top:110px;
- left:100px;
  width:400px;
- 
+
 }
+
+#employee_list{
+position:absolute;
+right:240px;
+}
+

@@ -24,6 +24,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   # GET /contacts/new.xml
   def new
+    @static = Static.find_active
     @contact = Contact.new
 
     respond_to do |format|

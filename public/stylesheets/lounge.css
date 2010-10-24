@@ -200,9 +200,18 @@ height:140px;
 
 }
 
-#bottom_left{}
+#bottom_left{
 
-#bottom_right{  }
+}
+
+
+#sitemap li:hover a:hover{
+color: #007BDA;
+}
+
+#bottom_right{
+
+}
 
 #sponsor{
   border:1px solid #040404;

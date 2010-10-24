@@ -82,7 +82,16 @@
 
 <div id='bottom_section' >
   <div id='bottom_left'>
-    <p></p>
+    <p>
+    <h3 class=' pushleft textshadow'>SiteMap</h3>
+    <ul class='pushy' id='sitemap'>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Make Reservations', new_reservation_path %></li>
+      <li><%= link_to 'Gallery',galleries_path%></li>
+      <li><%= link_to 'Events',events_path%></li>
+      <li>  <%= link_to 'Contact',new_contact_path %></li>
+    </ul>
+    </p>
   </div>
   <div id='bottom_right'>
 <h3 class=' pushleft textshadow'><span>Our Sponsors & Friends</span></h3>

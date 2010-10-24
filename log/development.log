@@ -34101,3 +34101,47 @@ Started GET "/" for 127.0.0.1 at 2010-10-24 18:56:25 +0100
   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
 Rendered lounges/index.html.erb within layouts/application (132.7ms)
 Completed 200 OK in 177ms (Views: 137.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 19:22:19 +0100
+  Processing by ContactsController#new as HTML
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+Rendered contacts/_form.html.erb (9.5ms)
+Rendered contacts/new.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 151ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 19:22:26 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 152ms (Views: 45.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2010-10-24 19:41:49 +0100
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_user_sessions__form_html_erb___1806591017330120136_26797700_2578525516757751145 at /home/monster/Documents/Rails/sklounge/app/views/user_sessions/_form.html.erb:3)
+Rendered user_sessions/_form.html.erb (3.6ms)
+Rendered user_sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 113ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2010-10-24 19:41:52 +0100
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "user_session"=>{"login"=>"sklounge", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'sklounge') LIMIT 1
+Redirected to http://localhost:8080/
+Completed 302 Found in 107ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 19:41:52 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.6ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered lounges/index.html.erb within layouts/application (130.0ms)
+Completed 200 OK in 176ms (Views: 133.8ms | ActiveRecord: 1.9ms)

@@ -46,7 +46,19 @@ border:1px solid #000;
  padding-right:10px;
 }
 
-
+#contact_form{
+color:black;
+border:1px solid #000;
+ background: rgba(0,0,0,0.7);
+ margin-left:10%;
+ margin-bottom:20px;
+ height:auto;
+ width:500px;
+ padding-top:20px;
+ padding-bottom:20px;
+ padding-left:100px;
+ padding-right:10px;
+}
 
 #standard_file{
 color:white;

@@ -1,16 +1,29 @@
 <br/>
 <h1 class='htwo'><span>Contact</span> Us </h1>
 <br/>
+
+<div id='employee_list'>
+<p>
+<img src="" />
+<label> Peter Tang</label>
+</p>
+</div>
+
 <div id='contact_support'>
 <h3>Understanding You</h3>
 <p id='contact_desc'>
+Query is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is designed to change the way that you write JavaScript.
 <% unless @static == nil %>
    <%= @static.contact_desc %>
   <% end %></p>
+  <p class="push textshadow"><span>-Peter Tang, SkLounge Rep.</span></p>
 </div>
 <br/><br/>
 
-<div id="reg_form", class = "curved">
+
+
+<div id="contact_form", class = "curved">
+ <h2>Get In Touch With Us</h2><br/>
 <%= render :partial => 'form' %>
 </div>
 

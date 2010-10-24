@@ -31940,3 +31940,441 @@ Started GET "/" for 127.0.0.1 at 2010-10-23 22:28:55 +0100
   [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
 Rendered lounges/index.html.erb within layouts/application (53.8ms)
 Completed 200 OK in 162ms (Views: 57.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2010-10-24 14:18:15 +0100
+  Processing by EventsController#new as HTML
+Rendered events/_form.html.erb (92.6ms)
+DEPRECATION WARNING: RAILS_DEFAULT_LOGGER is deprecated. Please use ::Rails.logger. (called from search_for_record at /home/monster/.rvm/gems/ruby-1.9.2-p0/bundler/gems/authlogic-66ed79515919/lib/authlogic/session/scopes.rb:94)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered events/new.html.erb within layouts/application (325.4ms)
+Completed 200 OK in 487ms (Views: 383.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-24 14:18:19 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb__1336887215177037806_27567180_2578525516757751145 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (22.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered reservations/new.html.erb within layouts/application (146.0ms)
+Completed 200 OK in 213ms (Views: 176.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-24 14:18:32 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "reservation"=>{"first_name"=>"Alexander", "last_name"=>"Ewetumo", "email"=>"trinoxf@gmail.com", "phone_number"=>"08034802252", "number_of_guest"=>"4", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"24", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reservations" ("created_at", "email", "extra_msg", "first_name", "last_name", "number_of_guest", "phone_number", "reservation_date", "reservation_time", "table_reservation", "updated_at") VALUES ('2010-10-24 13:18:32.189025', 'trinoxf@gmail.com', '', 'Alexander', 'Ewetumo', '4', 8034802252, '2010-10-24', '7pm', 'Yes', '2010-10-24 13:18:32.189025')
+spawn> parent PID = 3830
+spawn> child PID = 3910
+Redirected to http://localhost:8080/reservations/1
+Completed 302 Found in 283ms
+
+
+Started GET "/reservations/1" for 127.0.0.1 at 2010-10-24 14:18:32 +0100
+  Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReservation Load (0.3ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE ("reservations"."id" = 1) LIMIT 1[0m
+Rendered notifier/reservation_confirmation.html.erb (1.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered reservations/show.html.erb within layouts/application (156.4ms)
+Completed 200 OK in 195ms (Views: 174.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 14:18:35 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (112.6ms)
+Completed 200 OK in 206ms (Views: 132.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:18:37 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (14.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (141.0ms)
+Completed 200 OK in 255ms (Views: 145.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:18:55 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (125.5ms)
+Completed 200 OK in 163ms (Views: 130.1ms | ActiveRecord: 0.7ms)
+
+Sent mail to trinoxf@gmail.com (26272ms)
+Date: Sun, 24 Oct 2010 14:18:32 +0100
+From: sklounge@gmail.com
+To: trinoxf@gmail.com
+Message-ID: <4cc43228ca8a7_f465ec6d09349e@monster-laptop.mail>
+Subject: SKlounge:: Thank you for Reservating With Us
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+<style type='text/css'>
+  body{
+      background: #000;
+    }
+
+   #email_notification{
+     width:300px;
+     height:600px;
+     border: 1px solid #333;
+   }
+</style>
+</head>
+<body style="background: #000">
+<div id='email_notification'>
+<h1> Your Reservation has Being Created!</h1>
+
+<h3><span>Reservation</span> Details</h3>
+
+<div id='show_reservation'>
+<br/>
+<p>
+  <b>Reserver ID:</b>
+  1
+</p>
+<br/>
+<p>
+  <b>Name:</b>
+  Alexander Ewetumo
+</p>
+<br/>
+<p>
+  <b>Email:</b>
+  trinoxf@gmail.com
+</p>
+<br/>
+<p>
+  <b>Phone Number:</b>
+  8034802252
+</p>
+<br/>
+<p>
+  <b>Number of Guest:</b>
+  4
+</p>
+<br/>
+<p>
+  <b>Reservation Date:</b>
+  2010-10-24
+</p>
+<br/>
+<p>
+  <b>Reservation Time:</b>
+  7pm
+</p>
+<br/>
+<p>
+  <b>Table Reservation:</b>
+  Yes
+</p>
+<br/>
+<p>
+  <b>Extra Message:</b>
+     nill
+</p>
+<br/>
+</div>
+</body>
+</html>
+
+spawn> child[3910] took 26.60708043 sec
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:19:09 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (120.7ms)
+Completed 200 OK in 159ms (Views: 124.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:19:18 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (65.2ms)
+Completed 200 OK in 157ms (Views: 69.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:19:27 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (1.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (127.2ms)
+Completed 200 OK in 220ms (Views: 130.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:19:37 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (120.2ms)
+Completed 200 OK in 228ms (Views: 124.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:19:50 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (119.5ms)
+Completed 200 OK in 155ms (Views: 123.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:23:02 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (62.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (119.0ms)
+Completed 200 OK in 154ms (Views: 123.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:23:45 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (119.8ms)
+Completed 200 OK in 210ms (Views: 123.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:23:52 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (130.3ms)
+Completed 200 OK in 223ms (Views: 134.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:24:41 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.0ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (123.3ms)
+Completed 200 OK in 159ms (Views: 127.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:24:59 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.7ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (120.7ms)
+Completed 200 OK in 156ms (Views: 124.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:25:12 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (127.1ms)
+Completed 200 OK in 163ms (Views: 131.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:25:53 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.3ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (63.2ms)
+Completed 200 OK in 155ms (Views: 67.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:26:25 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (122.1ms)
+Completed 200 OK in 214ms (Views: 125.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:27:04 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (121.5ms)
+Completed 200 OK in 156ms (Views: 125.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:27:15 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (123.4ms)
+Completed 200 OK in 158ms (Views: 126.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:27:23 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (121.5ms)
+Completed 200 OK in 159ms (Views: 127.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:27:35 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (62.3ms)
+Completed 200 OK in 155ms (Views: 66.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:27:42 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (4.1ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 229ms (Views: 131.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:27:58 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (121.9ms)
+Completed 200 OK in 159ms (Views: 125.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:28:31 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (120.4ms)
+Completed 200 OK in 155ms (Views: 124.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:28:40 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (119.6ms)
+Completed 200 OK in 154ms (Views: 123.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:30:24 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 153ms (Views: 66.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:30:31 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (1.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (123.8ms)
+Completed 200 OK in 215ms (Views: 127.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:30:44 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (124.6ms)
+Completed 200 OK in 216ms (Views: 128.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:31:22 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (120.9ms)
+Completed 200 OK in 156ms (Views: 124.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:31:33 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (131.6ms)
+Completed 200 OK in 168ms (Views: 137.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:35:21 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (70.0ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (128.7ms)
+Completed 200 OK in 165ms (Views: 133.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:35:22 +0100
+  Processing by ContactsController#new as */*
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (136.3ms)
+Completed 200 OK in 258ms (Views: 140.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:35:47 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.6ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (122.2ms)
+Completed 200 OK in 158ms (Views: 126.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 14:35:48 +0100
+  Processing by ContactsController#new as */*
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (18.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (149.2ms)
+Completed 200 OK in 194ms (Views: 154.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-24 14:43:45 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[36mGallery Load (0.5ms)[0m  [1mSELECT "galleries".* FROM "galleries"[0m
+Rendered galleries/index.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 195ms (Views: 96.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-24 14:45:35 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+Rendered galleries/index.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 122ms (Views: 106.4ms | ActiveRecord: 0.5ms)

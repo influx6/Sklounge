@@ -1,5 +1,5 @@
 class StaticsController < ApplicationController
-  before_filter :require_user, :only => [:index,:new, :create,:show, :edit, :update,:destroy]
+  before_filter :require_user, :except => []
 
   # GET /statics/1
   # GET /statics/1.xml

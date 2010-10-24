@@ -1,8 +1,8 @@
 class Event < ActiveRecord::Base
-   attr_accessible :event_name, :event_start_date, :event_end_date, :event_start_time,:event_end_time, :event_type
+   attr_accessible :event_name, :event_start_date, :event_end_date, :event_start_time,:event_end_time
 
 attr_reader :current_year, :current_month, :month_list
-
+validates_presence_of :event_name, :event_start_date, :event_end_date, :event_start_time,:event_end_time
 validates_uniqueness_of :event_name
 
   def month

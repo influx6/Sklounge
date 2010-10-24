@@ -1,17 +1,18 @@
 class GalleriesController < ApplicationController
-before_filter :require_user ,:only => [:show, :new, :create, :edit, :update, :destroy]
+ before_filter :require_user ,:except => [:index]
+
   def index
     @galleries = Gallery.all
   end
-  
+
   def show
     @gallery = Gallery.find(params[:id])
   end
-  
+
   def new
     @gallery = Gallery.new
   end
-  
+
   def create
     @gallery = Gallery.new(params[:gallery])
     if @gallery.save
@@ -21,11 +22,11 @@ before_filter :require_user ,:only => [:show, :new, :create, :edit, :update, :de
       render :action => 'new'
     end
   end
-  
+
   def edit
     @gallery = Gallery.find(params[:id])
   end
-  
+
   def update
     @gallery = Gallery.find(params[:id])
     if @gallery.update_attributes(params[:gallery])
@@ -35,7 +36,7 @@ before_filter :require_user ,:only => [:show, :new, :create, :edit, :update, :de
       render :action => 'edit'
     end
   end
-  
+
   def destroy
     @gallery = Gallery.find(params[:id])
     @gallery.destroy
@@ -43,3 +44,4 @@ before_filter :require_user ,:only => [:show, :new, :create, :edit, :update, :de
     redirect_to galleries_url
   end
 end
+

@@ -3,7 +3,8 @@ attr_reader :staff_list
 validates_uniqueness_of :login
 
 attr_accessible :login, :email, :password,:password_confirmation
-
+validates_format_of :email,  :with => /([a-z0-9_.-]+)@([a-z0-9-]+)\.([a-z.]+)/i ,:message => " is Invalid"
+validates_presence_of :login, :email, :password,:password_confirmation
 
 acts_as_authentic do |c|
    c.validate_email_field = true

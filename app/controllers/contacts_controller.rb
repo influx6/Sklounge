@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_filter :require_user, :only => [:index,:show, :destroy]
   # GET /contacts
   # GET /contacts.xml
   def index
@@ -39,15 +40,11 @@ class ContactsController < ApplicationController
   # POST /contacts.xml
   def create
     @contact = Contact.new(params[:contact])
-
-    respond_to do |format|
       if @contact.save
-        format.html { redirect_to(@contact, :notice => 'Contact was successfully created.') }
-        format.xml  { render :xml => @contact, :status => :created, :location => @contact }
+      flash[:notice] = 'Contact was successfully created.'
+      redirect_to new_contact_url
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @contact.errors, :status => :unprocessable_entity }
-      end
+      render :action => "new"
     end
   end
 

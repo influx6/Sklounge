@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+ before_filter :require_user ,:except => [:index]
+
   # GET /events
   # GET /events.xml
   def index
@@ -81,3 +83,4 @@ class EventsController < ApplicationController
     end
   end
 end
+

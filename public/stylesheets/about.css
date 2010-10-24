@@ -22,3 +22,12 @@ position:absolute;
 right:240px;
 }
 
+#employee_list p img{
+    border:5px solid #1B1B1B;
+border-radius:16px;
+-moz-border-radius:16px;
+-webkit-border-radius:16px;
+-o-border-radius:16px;
+behavior: url(border-radius.htc);
+}
+

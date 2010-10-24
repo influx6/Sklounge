@@ -15,11 +15,11 @@
  <h2>Listing contacts</h2>
 
 <br/>
-<div id='form_search' class='curved'>
-</div>
+<% if current_user %>
 <div id='form_new' class='curved'>
 <%= link_to 'New Contact', new_contact_path %>
 </div>
+<% end %>
 <br/>
 <br/>
 <div id='standard_file' >

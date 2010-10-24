@@ -35483,3 +35483,389 @@ Rendered contacts/_form.html.erb (9.1ms)
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
 Rendered contacts/new.html.erb within layouts/application (135.2ms)
 Completed 200 OK in 160ms (Views: 138.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:44:03 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (10.7ms)
+DEPRECATION WARNING: RAILS_DEFAULT_LOGGER is deprecated. Please use ::Rails.logger. (called from search_for_record at /home/monster/.rvm/gems/ruby-1.9.2-p0/bundler/gems/authlogic-66ed79515919/lib/authlogic/session/scopes.rb:94)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered contacts/new.html.erb within layouts/application (159.8ms)
+Completed 200 OK in 275ms (Views: 163.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2010-10-24 20:44:05 +0100
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics"[0m
+Rendered users/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 141ms (Views: 24.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2010-10-24 20:44:07 +0100
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:8080/
+Completed 302 Found in 111ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 20:44:07 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (102.8ms)
+Completed 200 OK in 148ms (Views: 107.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 20:44:13 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (1.6ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (11.5ms)
+Rendered contacts/new.html.erb within layouts/application (61.3ms)
+Completed 200 OK in 168ms (Views: 65.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 20:44:23 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (1.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (116.7ms)
+Completed 200 OK in 166ms (Views: 120.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2010-10-24 20:44:33 +0100
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_user_sessions__form_html_erb___4235652092034207701_34404880_3202853149615678294 at /home/monster/Documents/Rails/sklounge/app/views/user_sessions/_form.html.erb:3)
+Rendered user_sessions/_form.html.erb (3.5ms)
+Rendered user_sessions/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 43ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2010-10-24 20:44:35 +0100
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "user_session"=>{"login"=>"sklounge", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'sklounge') LIMIT 1[0m
+Redirected to http://localhost:8080/
+Completed 302 Found in 233ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 20:44:36 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered lounges/index.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 177ms (Views: 69.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 20:44:38 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (74.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered contacts/new.html.erb within layouts/application (137.9ms)
+Completed 200 OK in 172ms (Views: 141.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:44:41 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (9.4ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered contacts/new.html.erb within layouts/application (154.3ms)
+Completed 200 OK in 182ms (Views: 157.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:45:45 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (8.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered contacts/new.html.erb within layouts/application (131.2ms)
+Completed 200 OK in 159ms (Views: 135.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:46:07 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (9.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered contacts/new.html.erb within layouts/application (66.2ms)
+Completed 200 OK in 157ms (Views: 70.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:46:19 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (8.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered contacts/new.html.erb within layouts/application (131.1ms)
+Completed 200 OK in 223ms (Views: 135.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2010-10-24 20:46:22 +0100
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:8080/
+Completed 302 Found in 52ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 20:46:22 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 155ms (Views: 46.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 20:46:24 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (8.9ms)
+Rendered contacts/new.html.erb within layouts/application (114.2ms)
+Completed 200 OK in 151ms (Views: 119.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:46:27 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (10.3ms)
+Rendered contacts/new.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 153ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:48:33 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Completed   in 119ms
+
+ActionView::MissingTemplate (Missing template http://localhost:8080/contacts/new with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/monster/Documents/Rails/sklounge/app/views", "/home/monster/Documents/Rails/sklounge/vendor/plugins/spawn/app/views", "/home/monster/Documents/Rails/sklounge", "/"):
+  app/controllers/contacts_controller.rb:47:in `create'
+
+Rendered /home/monster/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:48:45 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (8.6ms)
+Rendered contacts/new.html.erb within layouts/application (119.8ms)
+Completed 200 OK in 149ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:48:54 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (9.6ms)
+Rendered contacts/new.html.erb within layouts/application (117.8ms)
+Completed 200 OK in 148ms (Views: 122.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:50:28 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (71.9ms)
+Rendered contacts/new.html.erb within layouts/application (110.2ms)
+Completed 200 OK in 138ms (Views: 114.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:50:49 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (9.0ms)
+Rendered contacts/new.html.erb within layouts/application (112.9ms)
+Completed 200 OK in 140ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2010-10-24 20:52:25 +0100
+  Processing by ContactsController#index as HTML
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /home/monster/Documents/Rails/sklounge/app/controllers/application_controller.rb:41)
+Redirected to http://localhost:8080/
+Completed 302 Found in 30ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 20:52:25 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.4ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 152ms (Views: 47.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:52:31 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (8.3ms)
+Rendered contacts/new.html.erb within layouts/application (113.1ms)
+Completed 200 OK in 141ms (Views: 117.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 20:52:56 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.6ms)
+Rendered contacts/new.html.erb within layouts/application (127.1ms)
+Completed 200 OK in 243ms (Views: 131.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:52:59 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (8.9ms)
+Rendered contacts/new.html.erb within layouts/application (125.7ms)
+Completed 200 OK in 154ms (Views: 129.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:53:37 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (8.8ms)
+Rendered contacts/new.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 141ms (Views: 117.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:54:00 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (8.1ms)
+Rendered contacts/new.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 141ms (Views: 116.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-24 20:54:35 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___648058575630092664_34045620_3202853149615678294 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (21.5ms)
+Rendered reservations/new.html.erb within layouts/application (131.1ms)
+Completed 200 OK in 152ms (Views: 135.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for 127.0.0.1 at 2010-10-24 20:54:38 +0100
+  Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "reservation"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "phone_number"=>"", "number_of_guest"=>"", "reservation_date(1i)"=>"2010", "reservation_date(2i)"=>"10", "reservation_date(3i)"=>"24", "reservation_time"=>"7pm", "table_reservation"=>"Yes", "extra_msg"=>""}, "commit"=>"   Create   "}
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___648058575630092664_29946860_3202853149615678294 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (80.4ms)
+Rendered reservations/new.html.erb within layouts/application (119.5ms)
+Completed 200 OK in 157ms (Views: 123.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 20:55:06 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 153ms (Views: 47.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 20:55:09 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (13.3ms)
+Rendered contacts/new.html.erb within layouts/application (122.8ms)
+Completed 200 OK in 223ms (Views: 126.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 20:55:50 +0100
+  Processing by ContactsController#new as HTML
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+Rendered contacts/new.html.erb within layouts/application (131.8ms)
+Completed 200 OK in 167ms (Views: 135.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:55:52 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/new.html.erb within layouts/application (120.7ms)
+Completed 200 OK in 150ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 20:57:35 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (75.0ms)
+Rendered contacts/new.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 153ms (Views: 122.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 20:58:32 +0100
+  Processing by ContactsController#new as HTML
+  [1m[35mStatic Load (2.8ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+Rendered contacts/_form.html.erb (8.9ms)
+Rendered contacts/new.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 151ms (Views: 55.9ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 20:58:35 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (9.3ms)
+Rendered contacts/new.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 142ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2010-10-24 21:01:01 +0100
+  Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brd9FQ9IWmry4ZZPir8UWoGdW1XosZVHdAbP7viAoZg=", "contact"=>{"full_name"=>"", "email"=>"", "subject"=>"", "message"=>""}, "commit"=>"Create Contact"}
+Rendered contacts/_form.html.erb (8.5ms)
+Rendered contacts/new.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 143ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 21:01:42 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 162ms (Views: 47.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 21:01:44 +0100
+  Processing by ContactsController#new as HTML
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+Rendered contacts/_form.html.erb (10.0ms)
+Rendered contacts/new.html.erb within layouts/application (119.9ms)
+Completed 200 OK in 155ms (Views: 123.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-24 21:01:47 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___648058575630092664_30487120_3202853149615678294 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (16.4ms)
+Rendered reservations/new.html.erb within layouts/application (119.5ms)
+Completed 200 OK in 140ms (Views: 123.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 21:01:50 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (2.5ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 152ms (Views: 47.0ms | ActiveRecord: 3.1ms)

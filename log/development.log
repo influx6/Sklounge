@@ -33840,3 +33840,264 @@ Started GET "/" for 127.0.0.1 at 2010-10-24 16:46:45 +0100
   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
 Rendered lounges/index.html.erb within layouts/application (41.2ms)
 Completed 200 OK in 147ms (Views: 45.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:02:31 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (1.0ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (144.4ms)
+Completed 200 OK in 208ms (Views: 150.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:03:24 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.7ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.5ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (1.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (62.7ms)
+Completed 200 OK in 217ms (Views: 69.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:04:48 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.6ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (135.3ms)
+Completed 200 OK in 194ms (Views: 141.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:05:04 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.7ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.4ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (143.9ms)
+Completed 200 OK in 204ms (Views: 149.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:05:20 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.6ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 116ms (Views: 62.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:05:50 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.7ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (149.3ms)
+Completed 200 OK in 213ms (Views: 156.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:06:12 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.7ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (74.8ms)
+Completed 200 OK in 226ms (Views: 81.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:06:25 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.6ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (148.5ms)
+Completed 200 OK in 214ms (Views: 154.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:06:34 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.7ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 205ms (Views: 66.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:06:58 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.6ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (141.5ms)
+Completed 200 OK in 199ms (Views: 147.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:07:42 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.8ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (61.2ms)
+Completed 200 OK in 196ms (Views: 66.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:08:04 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.7ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (144.5ms)
+Completed 200 OK in 208ms (Views: 150.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:09:23 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.6ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 225ms (Views: 69.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:09:54 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.7ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.4ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (211.1ms)
+Completed 200 OK in 300ms (Views: 226.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:10:05 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.7ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (58.4ms)
+Completed 200 OK in 194ms (Views: 64.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:10:19 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.7ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (149.0ms)
+Completed 200 OK in 216ms (Views: 155.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:10:33 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.7ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (1.0ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (61.6ms)
+Completed 200 OK in 216ms (Views: 67.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:11:45 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.6ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (138.2ms)
+Completed 200 OK in 198ms (Views: 144.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:11:57 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.7ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (138.5ms)
+Completed 200 OK in 202ms (Views: 144.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:13:12 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.6ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (57.2ms)
+Completed 200 OK in 118ms (Views: 62.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:13:35 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.7ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (2.6ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (156.7ms)
+Completed 200 OK in 231ms (Views: 163.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 17:14:00 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.7ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (57.8ms)
+Completed 200 OK in 248ms (Views: 63.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 18:36:51 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 156ms (Views: 118.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 18:55:09 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.7ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 182ms (Views: 56.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 18:55:23 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.6ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (151.2ms)
+Completed 200 OK in 199ms (Views: 155.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 18:55:47 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 82ms (Views: 43.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 18:56:06 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (117.3ms)
+Completed 200 OK in 163ms (Views: 121.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 18:56:17 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 145ms (Views: 44.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 18:56:25 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (132.7ms)
+Completed 200 OK in 177ms (Views: 137.2ms | ActiveRecord: 1.0ms)

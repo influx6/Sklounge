@@ -245,7 +245,12 @@ border:2px solid red;
 }
 
 @font-face{
- font-family: aistream;
+ font-family: gothic;
+ src: url("/fonts/Gothic.otf");
+}
+
+@font-face{
+ font-family: airstream;
  src: url("/fonts/Airstream.ttf");
 }
 

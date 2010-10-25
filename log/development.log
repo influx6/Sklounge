@@ -35869,3 +35869,36 @@ Started GET "/" for 127.0.0.1 at 2010-10-24 21:01:50 +0100
   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
 Rendered lounges/index.html.erb within layouts/application (42.9ms)
 Completed 200 OK in 152ms (Views: 47.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 21:08:25 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (1.3ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 195ms (Views: 52.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-24 21:08:26 +0100
+  Processing by ContactsController#new as HTML
+  [1m[36mStatic Load (0.4ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+Rendered contacts/_form.html.erb (9.3ms)
+Rendered contacts/new.html.erb within layouts/application (113.4ms)
+Completed 200 OK in 148ms (Views: 117.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-24 21:30:26 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 157ms (Views: 113.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-24 21:30:46 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (101.7ms)
+Completed 200 OK in 117ms (Views: 105.5ms | ActiveRecord: 0.5ms)

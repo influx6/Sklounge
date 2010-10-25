@@ -12,7 +12,9 @@
 <div id='contact_support'>
 <h3>Understanding You</h3>
 <p id='contact_desc'>
-We here at sklounge understand how important our customers are to us and we believe we do go as far as needed in our own way beyond providing the best service we can but we also understand that no one is perfect therefore we provide you below a space to express to us your problems, recommendations and requests and we will immediately return to you as needed.So get in touch,we are here to serve.
+  <% unless @static == nil %>
+   <%= @static.contact_desc %>
+  <% end %>
 </p>
   <p class="push textshadow"><span>-Peter Tang, SkLounge Rep.</span></p>
 </div>

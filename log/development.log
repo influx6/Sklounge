@@ -35924,3 +35924,109 @@ Started GET "/contacts/new" for 127.0.0.1 at 2010-10-25 15:45:22 +0100
 Rendered contacts/_form.html.erb (9.2ms)
 Rendered contacts/new.html.erb within layouts/application (114.8ms)
 Completed 200 OK in 161ms (Views: 118.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-27 14:08:30 +0100
+  Processing by LoungesController#index as HTML
+DEPRECATION WARNING: RAILS_DEFAULT_LOGGER is deprecated. Please use ::Rails.logger. (called from show_Bulletin at /home/monster/Documents/Rails/sklounge/app/controllers/lounges_controller.rb:15)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBulletin Load (0.1ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (1.3ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (99.4ms)
+Completed 200 OK in 285ms (Views: 141.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-27 14:08:41 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.3ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (96.8ms)
+Completed 200 OK in 148ms (Views: 101.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-27 14:08:48 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (111.1ms)
+Completed 200 OK in 163ms (Views: 116.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-27 14:08:59 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4463855970522946945_29495860__1573900015202183846 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (103.2ms)
+Rendered reservations/new.html.erb within layouts/application (138.9ms)
+Completed 200 OK in 224ms (Views: 158.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-27 14:09:17 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 127ms (Views: 44.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/galleries" for 127.0.0.1 at 2010-10-27 14:09:19 +0100
+  Processing by GalleriesController#index as HTML
+  [1m[35mGallery Load (0.5ms)[0m  SELECT "galleries".* FROM "galleries"
+Rendered galleries/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 79ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2010-10-27 14:09:37 +0100
+  Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered events/index.html.erb within layouts/application (80.8ms)
+Completed 200 OK in 111ms (Views: 99.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2010-10-27 14:10:00 +0100
+  Processing by ContactsController#new as HTML
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+Rendered contacts/_form.html.erb (11.4ms)
+Rendered contacts/new.html.erb within layouts/application (58.5ms)
+Completed 200 OK in 144ms (Views: 73.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-27 14:10:44 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.5ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 100ms (Views: 59.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-27 14:11:50 +0100
+  Processing by LoungesController#index as HTML
+  [1m[35mBulletin Load (0.5ms)[0m  SELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0
+  [1m[36mStatic Load (0.2ms)[0m  [1mSELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+Rendered lounges/index.html.erb within layouts/application (119.8ms)
+Completed 200 OK in 178ms (Views: 127.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reservations/new" for 127.0.0.1 at 2010-10-27 14:11:52 +0100
+  Processing by ReservationsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_reservations__form_html_erb___4463855970522946945_31697180__1573900015202183846 at /home/monster/Documents/Rails/sklounge/app/views/reservations/_form.html.erb:1)
+Rendered reservations/_form.html.erb (15.6ms)
+Rendered reservations/new.html.erb within layouts/application (102.5ms)
+Completed 200 OK in 123ms (Views: 109.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-27 14:12:40 +0100
+  Processing by LoungesController#index as HTML
+  [1m[36mBulletin Load (0.4ms)[0m  [1mSELECT "bulletins".* FROM "bulletins" ORDER BY id DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mStatic Load (0.2ms)[0m  SELECT "statics".* FROM "statics" WHERE ("statics"."static_active" = 'Yes') LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered lounges/index.html.erb within layouts/application (95.5ms)
+Completed 200 OK in 134ms (Views: 99.8ms | ActiveRecord: 0.8ms)
